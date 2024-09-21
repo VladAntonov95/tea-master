@@ -15,7 +15,7 @@ import "swiper/css";
 import { teas } from "./teas";
 
 // swiper component
-export default () => {
+const TeaSwiper = () => {
   return (
     <Swiper
       spaceBetween={50}
@@ -55,3 +55,5 @@ export default () => {
     </Swiper>
   );
 };
+
+export default TeaSwiper;

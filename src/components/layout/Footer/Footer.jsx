@@ -18,7 +18,7 @@ const Footer = () => {
       <section className=" max-w-[1024px] mx-auto">
         <section className="flex justify-between p-4">
           <h2 className="text-4xl text-center font-CrimsonPro text-white-text">
-            Чайна перетвореного світогляду "Пресвіт"
+            Чайна перетвореного світогляду &quot;Пресвіт&quot;
           </h2>
           <div className="flex">
             <Link
@@ -41,6 +41,7 @@ const Footer = () => {
             width={200}
             height={200}
             className="rounded-full p-4"
+            alt="Логотип чайноъ школи Пресвіт"
           />
           <ul className="self-center">
             <li>
