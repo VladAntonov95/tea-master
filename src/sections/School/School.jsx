@@ -4,16 +4,19 @@ import Button from "@/components/Button/Button";
 // School component
 export const School = () => {
   return (
-    <section id="school" className="mx-auto max-w-[1024px] my-20">
-      <h2 className="text-2xl font-bold text-center mb-5 font-CrimsonPro">
-        Чайна школа &quot;Пресвіт&quot;
+    <section
+      id="school"
+      className="mx-auto laptop:max-w-[1024px] max-w-[280px] bigMobile:max-w-[400px] tablet:max-w-[768px] tablet:p-4 my-8 border-t border-t-sections-border"
+    >
+      <h2 className="text-2xl font-bold text-center mb-5 mt-8 font-CrimsonPro bigMobile:max-w-[360px] tablet:max-w-[768px]">
+        Чайна школа «Пересвіт»
       </h2>
-      <p className="text-md font-Roboto">
-        Запрошуємо приєднатись до курсу для початківців &quot;Чайна школа&quot;
+      <p className="mx-auto text-md font-Roboto bigMobile:max-w-[360px] tablet:max-w-[768px] laptop:max-w-[1024px] tablet:p-0 tablet:mb-4">
+        Запрошуємо приєднатись до курсу для початківців чайна школа «Пересвіт»
         та отримати майстер-класс за наступними категоріями:
       </p>
-      <div className="flex">
-        <ul className="text-sm font-Roboto space-y-2 mt-4 text-gray-700">
+      <div className="flex tablet:flex-row flex-col tablet:p-0">
+        <ul className="text-sm font-Roboto space-y-2 py-4 text-gray-700 mb-4 tablet:mb-0 bigMobile:max-w-[360px] mx-auto">
           <li className="before:content-['🍵'] before:mr-2">
             Знайомство з чаями. Види і класифікація
           </li>
@@ -47,11 +50,12 @@ export const School = () => {
           frameBorder="0"
           allowFullScreen
           title="Video"
+          className="max-w-[280px] max-h-[280px] bigMobile:max-w-[400px] laptop:max-w-[680px] laptop:max-h-[360px] tablet:self-center"
         ></iframe>
       </div>
-      <div className="shadow-custom mt-8 p-4 rounded-lg flex flex-col">
+      <div className="shadow-custom p-4 mt-2 rounded-lg flex flex-col">
         <p className="text-sm font-Roboto">
-          В чайній школі &quot;Пересвіт, де проходять навчання, бажаючі отримати
+          В чайній школі «Пересвіт» де проходять навчання, бажаючі отримати
           унікальні знання, дізнатись тонкощі та особливості чайної справи,
           використовувати чаї в укріпленні свого організму, і звісно ж дивувати
           своїх друзів та рідних смачними чаями та приємними емоціями, і
@@ -65,7 +69,10 @@ export const School = () => {
           діти під час стресових ситуацій замість обурення та негативних емоцій,
           запропонують знайти рішення за чашкою приготованого ними смачного чаю!
         </p>
-        <Button title="Доєднатися до чайної школи ʼПресвітʼ">
+        <Button
+          title="Доєднатися до чайної школи ʼПресвітʼ"
+          className="mt-[25px] py-4 px-[72px] font-semibold text-md leading-[24.38px]"
+        >
           Доєднатися до школи!
         </Button>
       </div>

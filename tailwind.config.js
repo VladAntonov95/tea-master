@@ -10,11 +10,11 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        smallMobile: "8px",
-        mobile: "16px",
-        tablet: "32px",
+        smallMobile: "4px",
+        mobile: "8px",
+        tablet: "16px",
         laptop: "32px",
-        desktop: "150px",
+        desktop: "64px",
       },
     },
     screens: {
@@ -22,17 +22,20 @@ module.exports = {
       // => @media (min-width: 320px) { ... }
       mobile: "375px",
       // => @media (min-width: 375px) { ... }
-      tablet: "744px",
-      // => @media (min-width: 744px) { ... }
+      bigMobile: "425px",
+      // => @media (min-width: 425px) { ... }
+      tablet: "768px",
+      // => @media (min-width: 768px) { ... }
       laptop: "1024px",
       // => @media (min-width: 1024px) { ... }
       desktop: "1440px",
       // => @media (min-width: 1440px) { ... }
     },
     colors: {
-      wood: "#795548",
-      accent: "#b26a00",
-      background: "#fbfff8",
+      wood: "#DD4132",
+      accent: "#FF6822",
+      background: "white",
+      "sections-border": "#f4f4f4",
       "dark-text": "#202020",
       "white-text": "#fff",
       "gray-text": "#7a7c7f",
@@ -48,7 +51,7 @@ module.exports = {
       },
       boxShadow: {
         custom:
-          "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",
+          "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
       },
     },
     fontWeight: {

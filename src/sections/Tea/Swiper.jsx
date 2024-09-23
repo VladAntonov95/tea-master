@@ -19,39 +19,51 @@ import { teas } from "./teas";
 const TeaSwiper = () => {
   return (
     <Swiper
-      spaceBetween={40}
-      slidesPerView={2}
+      spaceBetween={50}
+      slidesPerView={3}
       className=".swiper"
       autoplay={{
         delay: 8000,
         disableOnInteraction: false,
       }}
       modules={[Autoplay]}
+      breakpoints={{
+        0: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1260: {
+          slidesPerView: 3,
+        },
+      }}
     >
       {teas.map((tea) => (
         <SwiperSlide
           key={tea.id}
-          className="rounded-3xl w-[380px] shadow-custom"
+          className=" max-w-[300px] max-h-[506px] shadow-custom bg-white-text rounded-3xl"
         >
-          <article>
+          <article className="p-8">
             <Image
               src={tea.imageUrl}
               alt={`tea ${tea.name}`}
               priority={true}
-              width={450}
-              height={400}
-              className="max-w-auto max-h-[400px] mx-auto rounded-3xl mt-2 border-wood border-[1px]"
+              width={268}
+              height={286}
+              className="h-[286px] w-[268px] shadow-second rounded-[12px]"
             />
-            <h3 className="text-center mt-3 text-lg font-CrimsonPro font-semibold">
+            <h3 className="text-center text-m font-CrimsonPro mt-3 font-semibold">
               {tea.name}
             </h3>
-            <p className="text-center text-sm p-3 font-Roboto">
-              {tea.description}
-            </p>
+            <p className="text-s mt-2 text-center">{tea.description}</p>
+            <Button
+              className="w-[150px] h-[40px] font-semibold text-s ml-[45px] mt-8"
+              title="Зробити замовленя чаю"
+            >
+              Замовити
+            </Button>
           </article>
-          <Button className="ml-[125px] mb-7" title="Зробити замовленя чаю">
-            Замовити
-          </Button>
         </SwiperSlide>
       ))}
     </Swiper>

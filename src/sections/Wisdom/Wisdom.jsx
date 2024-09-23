@@ -9,9 +9,9 @@ const Wisdom = () => {
   return (
     <section
       id="wisdom"
-      className="mx-auto max-w-[1024px] flex justify-between mt-5"
+      className="mx-auto laptop:max-w-[1024px] flex justify-between mt-8 border-t max-w-[280px] bigMobile:max-w-[400px] tablet:max-w-[768px] tablet:p-4 border-t-sections-border"
     >
-      <section className="flex flex-col">
+      <section className="flex flex-col mt-8">
         <article className="shadow-custom rounded-lg p-4 mb-5 w-[70%]">
           <FaQuoteLeft className="w-[40px] h-[40px] ml-auto" />
           <h2 className="text-center font-bold text-l">Учення спокою</h2>

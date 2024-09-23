@@ -6,6 +6,9 @@ import Link from "next/link";
 //import next Image
 import Image from "next/image";
 
+// import burger icon
+import { GiHamburgerMenu } from "react-icons/gi";
+
 // Header component
 const Header = () => {
   // navigation links
@@ -17,22 +20,22 @@ const Header = () => {
   ];
 
   return (
-    <header className="mx-auto max-w-[1024px]">
-      <section className="w-full bg-transparent flex align-middle py-[10px]">
+    <header className="mx-auto max-w-[100%] sticky top-0 z-50 bg-background border-b border-b-sections-border">
+      <section className="w-full flex align-middle p-[10px]">
         <Image
           src="/assets/images/footer/logo.png"
           width={100}
           height={100}
-          className="rounded-full p-4"
+          className="rounded-full p-4 max-w-[70px] max-h-[70px] tablet:max-w-[100px] tablet:max-h-[100px]"
           alt="Логотип чайноъ школи Пресвіт"
         />
         <Link
           href="#"
-          className="text-lg flex items-center font-CrimsonPro max-w-[285px] text-center font-bold"
+          className="hidden text-lg laptop:flex items-center font-CrimsonPro max-w-[285px] text-center font-bold"
         >
           Чайна Перетвореного Світогляду
         </Link>
-        <nav className="flex items-center ml-auto">
+        <nav className="hidden laptop:flex items-center ml-auto">
           <ul className="flex">
             {links.map((link) => (
               <li
@@ -48,6 +51,9 @@ const Header = () => {
             ))}
           </ul>
         </nav>
+        <button className="laptop:hidden ml-auto">
+          <GiHamburgerMenu className="w-8 h-8" />
+        </button>
       </section>
     </header>
   );
