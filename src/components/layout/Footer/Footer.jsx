@@ -17,7 +17,7 @@ const Footer = () => {
     <footer id="footer" className="bg-wood">
       <section className=" max-w-[1024px] mx-auto">
         <section className="flex justify-between p-4">
-          <h2 className="text-4xl text-center font-CrimsonPro text-white-text">
+          <h2 className="text-2xl text-center font-CrimsonPro text-white-text">
             Чайна перетвореного світогляду &quot;Пресвіт&quot;
           </h2>
           <div className="flex">
@@ -45,32 +45,32 @@ const Footer = () => {
           />
           <ul className="self-center">
             <li>
-              <Link href="" className="text-l text-white-text m-6 underline">
+              <Link href="" className="text-sm text-white-text m-6 underline">
                 Політика конфидеційності
               </Link>
             </li>
             <li>
-              <Link href="" className="text-l text-white-text m-6 underline">
+              <Link href="" className="text-sm text-white-text m-6 underline">
                 Правила користування сайтом
               </Link>
             </li>
           </ul>
           <ul className="self-center ml-auto">
-            <li className="flex text-l text-white-text">
+            <li className="flex text-sm text-white-text">
               <MdEmail className="mr-2 self-center" />
               E-mail:
               <Link href="mailto:info@peresvit.ua" className="ml-2 underline">
                 info@peresvit.ua
               </Link>
             </li>
-            <li className="flex text-l text-white-text">
+            <li className="flex text-sm text-white-text">
               <FaPhoneAlt className="mr-2 self-center" />
               Телефон:
               <Link href="tel:+380673320022" className="ml-2 underline ">
                 +380673320022
               </Link>
             </li>
-            <li className="flex text-l text-white-text">
+            <li className="flex text-sm text-white-text">
               <IoLocationOutline className="mr-2 self-center" />
               Адреса:
               <Link

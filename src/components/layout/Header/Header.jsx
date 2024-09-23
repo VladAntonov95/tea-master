@@ -3,35 +3,47 @@
 // imort next Links
 import Link from "next/link";
 
+//import next Image
+import Image from "next/image";
+
 // Header component
 const Header = () => {
   // navigation links
   const links = [
-    { text: "Чай" },
-    { text: "Посуда" },
-    { text: "Чайна школа" },
-    { text: "Мудрість" },
+    { text: "Чай", id: "tea" },
+    { text: "Посуда", id: "tableware" },
+    { text: "Чайна школа", id: "school" },
+    { text: "Мудрість", id: "wisdom" },
   ];
 
   return (
     <header className="mx-auto max-w-[1024px]">
-      <section className="w-full bg-transparent z-10 py-[30px] flex justify-between">
+      <section className="w-full bg-transparent flex align-middle py-[10px]">
+        <Image
+          src="/assets/images/footer/logo.png"
+          width={100}
+          height={100}
+          className="rounded-full p-4"
+          alt="Логотип чайноъ школи Пресвіт"
+        />
         <Link
           href="#"
-          className="text-lg py-[10px] align-center font-CrimsonPro"
+          className="text-lg flex items-center font-CrimsonPro max-w-[285px] text-center font-bold"
         >
           Чайна Перетвореного Світогляду
         </Link>
-        <nav>
+        <nav className="flex items-center ml-auto">
           <ul className="flex">
             {links.map((link) => (
               <li
                 key={link.text}
                 className="text-dark-text px-[15px] py-[10px] hover:text-accent"
               >
-                <button className="font-CrimsonPro text-lg font-medium">
-                  {link.text}
-                </button>
+                <Link href={`#${link.id}`}>
+                  <button className="font-CrimsonPro text-l font-medium">
+                    {link.text}
+                  </button>
+                </Link>
               </li>
             ))}
           </ul>

@@ -10,6 +10,7 @@ import { Autoplay } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
+import "./swiper.css";
 
 // import tea base
 import { teas } from "./teas";
@@ -18,8 +19,9 @@ import { teas } from "./teas";
 const TeaSwiper = () => {
   return (
     <Swiper
-      spaceBetween={50}
+      spaceBetween={40}
       slidesPerView={2}
+      className=".swiper"
       autoplay={{
         delay: 8000,
         disableOnInteraction: false,
@@ -29,7 +31,7 @@ const TeaSwiper = () => {
       {teas.map((tea) => (
         <SwiperSlide
           key={tea.id}
-          className="border-solid border-[1px] border-wood rounded-3xl w-[420px]"
+          className="rounded-3xl w-[380px] shadow-custom"
         >
           <article>
             <Image
@@ -40,10 +42,10 @@ const TeaSwiper = () => {
               height={400}
               className="max-w-auto max-h-[400px] mx-auto rounded-3xl mt-2 border-wood border-[1px]"
             />
-            <h3 className="text-center mt-3 text-2xl font-CrimsonPro">
+            <h3 className="text-center mt-3 text-lg font-CrimsonPro font-semibold">
               {tea.name}
             </h3>
-            <p className="text-center text-l p-3 font-Roboto">
+            <p className="text-center text-sm p-3 font-Roboto">
               {tea.description}
             </p>
           </article>
