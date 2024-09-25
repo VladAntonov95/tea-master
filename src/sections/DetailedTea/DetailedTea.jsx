@@ -22,7 +22,10 @@ const DetailedTea = ({ onBack }) => {
       </section>
       <section>
         {teas.map((tea) => (
-          <article className="border-b-2 border-b-dark-text py-5 text-center">
+          <article
+            className="border-b-2 border-b-dark-text py-5 text-center"
+            key={tea.id}
+          >
             <h3 className="text-lg my-4 text-center">{tea.name}</h3>
             <Image
               src={tea.imageUrl}

@@ -23,7 +23,10 @@ const DetailedTableware = ({ onBack }) => {
       </section>
       <section>
         {tablewares.map((tableware) => (
-          <article className="border-b-2 border-b-dark-text py-5 text-center">
+          <article
+            className="border-b-2 border-b-dark-text py-5 text-center"
+            key={tableware.id}
+          >
             <h3 className="text-lg my-4 text-center">{tableware.name}</h3>
             <Image
               src={tableware.imageUrl}
