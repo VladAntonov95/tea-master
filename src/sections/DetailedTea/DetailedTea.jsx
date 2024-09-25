@@ -13,35 +13,37 @@ import { teas } from "../Tea/teas";
 // create DatailedTea component
 const DetailedTea = ({ onBack }) => {
   return (
-    <section className="h-[100%] mx-auto max-w-[280px] bigMobile:max-w-[400px] tablet:max-w-[768px] bigMobile:p-2 tablet:p-4 laptop:max-w-[1024px] my-8">
-      <section className="flex border-b-2 border-b-dark-text border-t-2 border-t-dark-text py-5">
+    <section className="container m-auto max-w-[280px] bigMobile:max-w-[400px] tablet:max-w-[768px] laptop:max-w-[1024px]">
+      <section className="flex py-8">
         <button onClick={onBack}>
-          <IoIosArrowBack className="w-10 h-10" />
+          <IoIosArrowBack className="h-10 w-10 text-wood" />
         </button>
-        <h2 className="text-2xl font-bold align-middle mx-auto">Наявні Чаї</h2>
+        <h2 className="mx-auto text-2xl font-bold">Наявні Чаї</h2>
       </section>
       <section>
         {teas.map((tea) => (
           <article
-            className="border-b-2 border-b-dark-text py-5 text-center"
+            className="mb-8 flex rounded-3xl p-8 shadow-custom"
             key={tea.id}
           >
-            <h3 className="text-lg my-4 text-center">{tea.name}</h3>
             <Image
               src={tea.imageUrl}
               alt={`tea ${tea.name}`}
               priority={true}
-              width={500}
-              height={400}
-              className="h-[400px] w-[500px] mx-auto rounded-[12px]"
+              width={400}
+              height={300}
+              className="h-[300px] w-[400px] rounded-[12px]"
             />
-            <p className="text-m mt-2 text-center">{tea.bigDescription}</p>
-            <Button
-              className="w-[50%] h-[50px] font-semibold text-m mt-8"
-              title="Зробити замовленя чаю"
-            >
-              {`Замовити ${tea.name}`}
-            </Button>
+            <section className="ml-8 max-w-[500px]">
+              <h3 className="my-8 text-lg">{tea.name}</h3>
+              <p className="text-m">{tea.bigDescription}</p>
+              <Button
+                className="mt-8 h-[50px] w-[50%] text-m font-semibold"
+                title="Зробити замовленя чаю"
+              >
+                {`Замовити`}
+              </Button>
+            </section>
           </article>
         ))}
       </section>

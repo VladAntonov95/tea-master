@@ -2,7 +2,7 @@
 const Button = ({ children, title, className }) => {
   return (
     <button
-      className={`bg-wood  text-white-text text-center pointer hover:bg-accent rounded-[12px]  ${className}`}
+      className={`bg-wood  text-white-text text-center pointer hover:bg-accent rounded-[12px] max-w-[400px] ${className}`}
       title={title}
     >
       {children}

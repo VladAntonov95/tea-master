@@ -15,32 +15,31 @@ const Header = ({ onSectionClick, onBack }) => {
     { text: "Чай", id: "tea" },
     { text: "Посуда", id: "tableware" },
     { text: "Чайна школа", id: "school" },
-    { text: "Мудрість", id: "wisdom" },
   ];
 
   return (
-    <header className="mx-auto w-[100%] max-w-[1440px] sticky top-0 z-50 bg-background border-b border-b-sections-border">
-      <section className="w-full flex align-middle p-[10px]">
+    <header className="container sticky top-0 z-50 mx-auto w-[100%] max-w-[1440px] border-b border-b-sections-border bg-background">
+      <section className="flex w-full p-[10px] align-middle">
         <Image
           src="/assets/images/footer/logo.png"
           width={100}
           height={100}
-          className="rounded-full p-4 max-w-[70px] max-h-[70px] tablet:max-w-[100px] tablet:max-h-[100px]"
+          className="max-h-[70px] max-w-[70px] rounded-full p-4 tablet:max-h-[100px] tablet:max-w-[100px]"
           alt="Логотип чайноъ школи Пресвіт"
         />
         <Link
           onClick={onBack}
           href="#"
-          className="hidden text-lg laptop:flex items-center font-CrimsonPro max-w-[285px] text-center font-bold"
+          className="font-CrimsonPro hidden max-w-[285px] items-center text-center text-lg font-bold laptop:flex"
         >
           Чайна Перетвореного Світогляду
         </Link>
-        <nav className="hidden laptop:flex items-center ml-auto">
+        <nav className="ml-auto hidden items-center laptop:flex">
           <ul className="flex">
             {links.map((link) => (
               <li
                 key={link.text}
-                className="text-dark-text px-[15px] py-[10px] hover:text-accent"
+                className="p-4 text-dark-text hover:text-accent"
               >
                 <button
                   className="font-CrimsonPro text-l font-medium"
@@ -52,8 +51,8 @@ const Header = ({ onSectionClick, onBack }) => {
             ))}
           </ul>
         </nav>
-        <button className="laptop:hidden ml-auto">
-          <GiHamburgerMenu className="w-8 h-8" />
+        <button className="ml-auto pr-4 laptop:hidden">
+          <GiHamburgerMenu className="h-8 w-8" />
         </button>
       </section>
     </header>

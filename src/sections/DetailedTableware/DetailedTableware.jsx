@@ -10,39 +10,40 @@ import Button from "@/components/Button/Button";
 // import tableware data
 import { tablewares } from "./tableware";
 
+// create details tableware component
 const DetailedTableware = ({ onBack }) => {
   return (
-    <section className="h-[100%] mx-auto max-w-[280px] bigMobile:max-w-[400px] tablet:max-w-[768px] bigMobile:p-2 tablet:p-4 laptop:max-w-[1024px] my-8">
-      <section className="flex border-b-2 border-b-dark-text border-t-2 border-t-dark-text py-5">
+    <section className="container m-auto max-w-[280px] bigMobile:max-w-[400px] tablet:max-w-[768px] laptop:max-w-[1024px]">
+      <section className="flex py-8">
         <button onClick={onBack}>
-          <IoIosArrowBack className="w-10 h-10" />
+          <IoIosArrowBack className="h-10 w-10 text-wood" />
         </button>
-        <h2 className="text-2xl font-bold align-middle mx-auto">
-          Наявний Посуд
-        </h2>
+        <h2 className="mx-auto text-2xl font-bold">Наявний Посуд</h2>
       </section>
       <section>
         {tablewares.map((tableware) => (
           <article
-            className="border-b-2 border-b-dark-text py-5 text-center"
+            className="mb-8 flex rounded-3xl p-8 shadow-custom"
             key={tableware.id}
           >
-            <h3 className="text-lg my-4 text-center">{tableware.name}</h3>
             <Image
               src={tableware.imageUrl}
-              alt={`tea ${tea.name}`}
+              alt={`tea ${tableware.name}`}
               priority={true}
-              width={500}
-              height={400}
-              className="h-[400px] w-[500px] mx-auto rounded-[12px]"
+              width={400}
+              height={300}
+              className="h-[300px] w-[400px] rounded-[12px]"
             />
-            <p className="text-m mt-2 text-center">{tableware.description}</p>
-            <Button
-              className="w-[50%] h-[50px] font-semibold text-m mt-8"
-              title="Зробити замовленя чаю"
-            >
-              {`Замовити ${tableware.name}`}
-            </Button>
+            <section className="ml-8 max-w-[500px]">
+              <h3 className="my-8 text-lg">{tableware.name}</h3>
+              <p className="text-m">{tableware.description}</p>
+              <Button
+                className="mt-8 h-[50px] w-[50%] text-m font-semibold"
+                title="Зробити замовленя чаю"
+              >
+                {`Замовити`}
+              </Button>
+            </section>
           </article>
         ))}
       </section>

@@ -8,36 +8,33 @@ import Button from "@/components/Button/Button";
 // Tableware component
 export const Tableware = () => {
   return (
-    <section
-      id="tableware"
-      className="flex flex-col mx-auto max-w-[320px] bigMobile:max-w-[400px] tablet:max-w-[768px] laptop:max-w-[1024px] p-1 bigMobile:p-2 tablet:p-4 border-t border-t-sections-border"
-    >
-      <section className="max-w-[1024px] flex justify-between mt-8">
+    <section className="container m-auto flex max-w-[320px] flex-col border-b border-b-sections-border py-4 bigMobile:max-w-[400px] tablet:max-w-[768px] laptop:max-w-[1024px] laptop:py-8">
+      <section className="flex justify-between">
         <section className="flex flex-col tablet:flex-row">
           <Image
             src="/assets/images/Tableware/tableware.png"
             width={200}
             height={200}
             alt="Посуд для чайної церемонії"
-            className="rounded-full w-[200px] h-[200px] mx-auto"
+            className="mx-auto mb-4 h-[200px] w-[200px] rounded-full tablet:mb-0"
           />
-          <div className="mr-10 hidden laptop:block">
+          <div className="mr-8 hidden laptop:block">
             <Image
               src="/assets/images/Tableware/2.png"
               width={100}
               height={100}
               alt="Посуд для чайної церемонії"
-              className="rounded-full w-[100px] h-[100px]"
+              className="h-[100px] w-[100px] rounded-full"
             />
             <Image
               src="/assets/images/Tableware/3.png"
               width={100}
               height={100}
               alt="Посуд для чайної церемонії"
-              className="rounded-full w-[100px] h-[100px]"
+              className="h-[100px] w-[100px] rounded-full"
             />
           </div>
-          <p className="ml-4 text-sm text-left font-Roboto max-w-[280px] bigMobile:max-w-[360px] tablet:max-w-[600px] laptop:max-w-[650px] laptop:ml-0">
+          <p className="my-auto text-left text-sm tablet:ml-4 laptop:ml-0 laptop:max-w-[650px]">
             Посуд ручної роботи створений з унікальної ісинської глини, яка
             цінується за свої особливі властивості та природну красу. Кожен
             виріб виготовляється з любов’ю та майстерністю, передаючи
@@ -47,9 +44,9 @@ export const Tableware = () => {
           </p>
         </section>
       </section>
-      <section className="max-w-[1024px] flex justify-between mt-8">
-        <section className="flex items-center flex-col tablet:flex-row">
-          <p className="p-4 text-sm text-left max-w-[280px] bigMobile:max-w-[360px] font-Roboto tablet:max-w-[600px] laptop:max-w-[650px] tablet:mb-0">
+      <section className="mt-4 flex justify-between laptop:mt-8">
+        <section className="flex flex-col items-center tablet:flex-row">
+          <p className="mb-4 text-left text-sm tablet:mb-0 laptop:max-w-[650px]">
             Чайники з ісинської глини — це втілення справжнього мистецтва. Вони
             мають здатність зберігати тепло та розкривати найтонші ноти ароматів
             чаю. Завдяки своїй пористості, чайник поступово вбирає аромати чаю,
@@ -68,20 +65,20 @@ export const Tableware = () => {
             обираєте не лише естетику, але й традиції, які пройшли крізь
             століття.
           </p>
-          <div className="ml-5 hidden laptop:block">
+          <div className="ml-8 hidden laptop:block">
             <Image
               src="/assets/images/Tableware/4.png"
               width={100}
               height={100}
               alt="Посуд для чайної церемонії"
-              className="rounded-full w-[100px] h-[100px]"
+              className="h-[100px] w-[100px] rounded-full"
             />
             <Image
               src="/assets/images/Tableware/5.png"
               width={100}
               height={100}
               alt="Посуд для чайної церемонії"
-              className="rounded-full w-[100px] h-[100px]"
+              className="h-[100px] w-[100px] rounded-full"
             />
           </div>
           <Image
@@ -89,13 +86,13 @@ export const Tableware = () => {
             width={200}
             height={200}
             alt="Посуд для чайної церемонії"
-            className="rounded-full w-[200px] h-[200px]"
+            className="h-[200px] w-[200px] rounded-full"
           />
         </section>
       </section>
       <Button
         title="Зробити замовлення посуду"
-        className="mt-[25px] py-4 px-[72px] font-semibold text-md leading-[24.38px] m-auto"
+        className="m-auto mt-4 px-[72px] py-4 text-md font-semibold laptop:mt-8"
       >
         Отримати посуд
       </Button>

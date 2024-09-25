@@ -4,42 +4,39 @@ import Button from "@/components/Button/Button";
 // School component
 export const School = () => {
   return (
-    <section
-      id="school"
-      className="mx-auto laptop:max-w-[1024px] max-w-[280px] bigMobile:max-w-[400px] tablet:max-w-[768px] tablet:p-4 my-8 border-t border-t-sections-border"
-    >
-      <h2 className="text-2xl font-bold text-center mb-5 mt-8 font-CrimsonPro bigMobile:max-w-[360px] tablet:max-w-[768px]">
+    <section className="container m-auto border-b border-b-sections-border py-4 laptop:py-8">
+      <h2 className="mb-4 text-center text-2xl font-bold laptop:mb-8">
         Чайна школа «Пересвіт»
       </h2>
-      <p className="mx-auto text-md font-Roboto bigMobile:max-w-[360px] tablet:max-w-[768px] laptop:max-w-[1024px] tablet:p-0 tablet:mb-4">
+      <p className="m-auto mb-4 text-md laptop:mb-8">
         Запрошуємо приєднатись до курсу для початківців чайна школа «Пересвіт»
         та отримати майстер-класс за наступними категоріями:
       </p>
-      <div className="flex tablet:flex-row flex-col tablet:p-0">
-        <ul className="text-sm font-Roboto space-y-2 py-4 text-gray-700 mb-4 tablet:mb-0 bigMobile:max-w-[360px] mx-auto">
-          <li className="before:content-['🍵'] before:mr-2">
+      <div className="mb-4 flex flex-col tablet:flex-row laptop:mb-8">
+        <ul className="my-auto mb-4 space-y-2 text-sm tablet:mb-0">
+          <li className="before:mr-2 before:content-['🍵']">
             Знайомство з чаями. Види і класифікація
           </li>
-          <li className="before:content-['🍵'] before:mr-2">
+          <li className="before:mr-2 before:content-['🍵']">
             Чайна Традиція школи Пересвіт
           </li>
-          <li className="before:content-['🍵'] before:mr-2">
+          <li className="before:mr-2 before:content-['🍵']">
             Створення чайного простору
           </li>
-          <li className="before:content-['🍵'] before:mr-2">
+          <li className="before:mr-2 before:content-['🍵']">
             Чайні інструменти та божества
           </li>
-          <li className="before:content-['🍵'] before:mr-2">
+          <li className="before:mr-2 before:content-['🍵']">
             Способи виготовлення чаю
           </li>
-          <li className="before:content-['🍵'] before:mr-2">
+          <li className="before:mr-2 before:content-['🍵']">
             Способи заварювання. Ритуал. Чайна церемонія. Чаювання
           </li>
-          <li className="before:content-['🍵'] before:mr-2">Зберігання чаю</li>
-          <li className="before:content-['🍵'] before:mr-2">
+          <li className="before:mr-2 before:content-['🍵']">Зберігання чаю</li>
+          <li className="before:mr-2 before:content-['🍵']">
             Чай в повсякденному житті
           </li>
-          <li className="before:content-['🍵'] before:mr-2">
+          <li className="before:mr-2 before:content-['🍵']">
             Легенди та історії
           </li>
         </ul>
@@ -50,11 +47,11 @@ export const School = () => {
           frameBorder="0"
           allowFullScreen
           title="Video"
-          className="max-w-[280px] max-h-[280px] bigMobile:max-w-[400px] laptop:max-w-[680px] laptop:max-h-[360px] tablet:self-center"
+          className="mx-auto max-h-[280px] max-w-[312px] bigMobile:max-w-[409px] tablet:self-center laptop:max-h-[360px] laptop:max-w-[680px]"
         ></iframe>
       </div>
-      <div className="shadow-custom p-4 mt-2 rounded-lg flex flex-col">
-        <p className="text-sm font-Roboto">
+      <article className="flex flex-col rounded-lg p-4 shadow-custom laptop:p-8">
+        <p className="text-sm">
           В чайній школі «Пересвіт» де проходять навчання, бажаючі отримати
           унікальні знання, дізнатись тонкощі та особливості чайної справи,
           використовувати чаї в укріпленні свого організму, і звісно ж дивувати
@@ -71,11 +68,11 @@ export const School = () => {
         </p>
         <Button
           title="Доєднатися до чайної школи ʼПресвітʼ"
-          className="mt-[25px] py-4 px-[72px] font-semibold text-md leading-[24.38px]"
+          className="mx-auto mt-4 px-[72px] py-4 text-md font-semibold laptop:mt-8"
         >
           Доєднатися до школи!
         </Button>
-      </div>
+      </article>
     </section>
   );
 };
