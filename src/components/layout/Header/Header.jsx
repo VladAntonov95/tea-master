@@ -1,5 +1,4 @@
 "use client";
-
 // imort next Links
 import Link from "next/link";
 
@@ -10,7 +9,7 @@ import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 // Header component
-const Header = () => {
+const Header = ({ onSectionClick, onBack }) => {
   // navigation links
   const links = [
     { text: "Чай", id: "tea" },
@@ -20,7 +19,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="mx-auto max-w-[100%] sticky top-0 z-50 bg-background border-b border-b-sections-border">
+    <header className="mx-auto w-[100%] max-w-[1440px] sticky top-0 z-50 bg-background border-b border-b-sections-border">
       <section className="w-full flex align-middle p-[10px]">
         <Image
           src="/assets/images/footer/logo.png"
@@ -30,6 +29,7 @@ const Header = () => {
           alt="Логотип чайноъ школи Пресвіт"
         />
         <Link
+          onClick={onBack}
           href="#"
           className="hidden text-lg laptop:flex items-center font-CrimsonPro max-w-[285px] text-center font-bold"
         >
@@ -42,11 +42,12 @@ const Header = () => {
                 key={link.text}
                 className="text-dark-text px-[15px] py-[10px] hover:text-accent"
               >
-                <Link href={`#${link.id}`}>
-                  <button className="font-CrimsonPro text-l font-medium">
-                    {link.text}
-                  </button>
-                </Link>
+                <button
+                  className="font-CrimsonPro text-l font-medium"
+                  onClick={() => onSectionClick(link.id)}
+                >
+                  {link.text}
+                </button>
               </li>
             ))}
           </ul>

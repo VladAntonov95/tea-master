@@ -46,7 +46,7 @@ export const School = () => {
         <iframe
           width="720"
           height="400"
-          src="https://www.youtube.com/embed/Af3rsgvEzSQ"
+          src="https://www.youtube-nocookie.com/embed/Af3rsgvEzSQ"
           frameBorder="0"
           allowFullScreen
           title="Video"

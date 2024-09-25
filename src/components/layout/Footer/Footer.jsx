@@ -15,8 +15,8 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <footer id="footer" className="bg-wood">
-      <section className=" max-w-[100%] mx-auto">
-        <section className="flex tablet:flex-row flex-col justify-between p-4">
+      <section className="w-[100%] max-w-[1440px] mx-auto">
+        <section className="flex tablet:flex-row flex-col justify-between p-4 ">
           <h2 className="text-2xl text-center font-CrimsonPro text-white-text tablet:max-w-[400px] desktop:min-w-[800px]">
             Чайна перетвореного світогляду «Пересвіт»
           </h2>
