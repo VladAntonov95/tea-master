@@ -20,7 +20,7 @@ const DetailedTableware = ({ onBack }) => {
         </button>
         <h2 className="mx-auto text-2xl font-bold">Наявний посуд</h2>
       </section>
-      <section className="mx-auto max-w-[700px]">
+      <section className="mx-auto max-w-[700px] laptop:max-w-[1024px]">
         {tablewares.map((tableware) => (
           <article
             className="mb-4 flex flex-col rounded-3xl p-4 text-center shadow-custom tablet:mb-8 tablet:flex-row tablet:p-8"
@@ -34,14 +34,14 @@ const DetailedTableware = ({ onBack }) => {
               height={500}
               className="h-[100%] w-[400px] rounded-[12px] tablet:mr-8 tablet:min-w-[256px]"
             />
-            <section className="max-w-[500px]">
+            <section className="flex max-w-[500px] flex-col justify-between">
               <h3 className="my-4 text-l tablet:my-8 tablet:text-lg">
                 {tableware.name}
               </h3>
               <p className="text-m">{tableware.description}</p>
               <Button
-                className="mt-4 h-[50px] w-[50%] text-m font-semibold tablet:mt-8"
-                title="Зробити замовленя чаю"
+                className="mx-auto mt-4 px-[72px] py-4 text-md font-semibold tablet:mt-auto"
+                title="Зробити замовленя посуду"
               >
                 {`Замовити`}
               </Button>

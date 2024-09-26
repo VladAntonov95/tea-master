@@ -8,7 +8,7 @@ import Button from "@/components/Button/Button";
 // Tableware component
 export const Tableware = () => {
   return (
-    <section className="container m-auto flex max-w-[320px] flex-col border-b border-b-sections-border py-4 bigMobile:max-w-[400px] tablet:max-w-[768px] laptop:max-w-[1024px] laptop:py-8">
+    <section className="container m-auto flex max-w-[320px] flex-col border-b border-b-sections-border py-4 bigMobile:max-w-[400px] tablet:max-w-[768px] laptop:max-w-[1024px] laptop:py-8 desktop:max-w-[1440px]">
       <section className="flex justify-between">
         <section className="flex flex-col tablet:flex-row">
           <Image
@@ -16,7 +16,7 @@ export const Tableware = () => {
             width={200}
             height={200}
             alt="Посуд для чайної церемонії"
-            className="mx-auto mb-4 h-[200px] w-[200px] rounded-full tablet:mb-0"
+            className="mx-auto mb-8 mt-4 h-[200px] w-[200px] rounded-full tablet:mb-0 tablet:mt-0"
           />
           <div className="mr-8 hidden laptop:block">
             <Image
@@ -34,7 +34,7 @@ export const Tableware = () => {
               className="h-[100px] w-[100px] rounded-full"
             />
           </div>
-          <p className="my-auto text-left text-sm tablet:ml-4 laptop:ml-0 laptop:max-w-[650px]">
+          <p className="my-auto text-left text-sm tablet:ml-4 laptop:ml-0 laptop:max-w-[650px] desktop:max-w-[950px]">
             Посуд ручної роботи створений з унікальної ісинської глини, яка
             цінується за свої особливі властивості та природну красу. Кожен
             виріб виготовляється з любов’ю та майстерністю, передаючи
@@ -46,7 +46,7 @@ export const Tableware = () => {
       </section>
       <section className="mt-4 flex justify-between laptop:mt-8">
         <section className="flex flex-col items-center tablet:flex-row">
-          <p className="mb-4 text-left text-sm tablet:mb-0 laptop:max-w-[650px]">
+          <p className="mb-8 text-left text-sm tablet:mb-0 laptop:max-w-[650px] desktop:max-w-[950px]">
             Чайники з ісинської глини — це втілення справжнього мистецтва. Вони
             мають здатність зберігати тепло та розкривати найтонші ноти ароматів
             чаю. Завдяки своїй пористості, чайник поступово вбирає аромати чаю,
@@ -92,9 +92,9 @@ export const Tableware = () => {
       </section>
       <Button
         title="Зробити замовлення посуду"
-        className="m-auto mt-4 px-[72px] py-4 text-md font-semibold laptop:mt-8"
+        className="m-auto mt-8 px-[72px] py-4 text-md font-semibold"
       >
-        Отримати посуд
+        Замовити
       </Button>
     </section>
   );

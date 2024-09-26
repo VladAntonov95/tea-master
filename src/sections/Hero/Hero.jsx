@@ -8,8 +8,8 @@ import Image from "next/image";
 // Hero component
 const Hero = () => {
   return (
-    <section className="container m-auto flex max-w-[320px] flex-col justify-between border-b border-b-sections-border py-4 bigMobile:max-w-[400px] tablet:max-w-[768px] tablet:flex-row laptop:max-w-[1024px] laptop:py-8">
-      <article className="text-center tablet:order-1 tablet:mr-4 tablet:text-left laptop:mr-8">
+    <section className="container m-auto flex flex-col justify-between border-b border-b-sections-border py-4 tablet:flex-row laptop:py-8">
+      <article className="flex flex-col justify-between text-center tablet:order-1 tablet:mr-4 tablet:text-left laptop:mr-8">
         <h1 className="mb-4 text-center text-2xl font-bold tablet:mb-8 tablet:text-left tablet:text-3xl">
           Чайна традиція «Пересвіт»
         </h1>
@@ -25,7 +25,7 @@ const Hero = () => {
           отримувати необхідний стан за допомогою чашки чаю.
         </p>
         <Button
-          className="mt-4 px-[72px] py-4 text-center text-md font-semibold tablet:ml-0 laptop:mt-8"
+          className="mx-auto mt-4 py-4 pl-[65px] pr-[72px] text-center text-md font-semibold tablet:mx-0 tablet:mt-auto"
           title="Доєднатися до школи прямо сейчас"
         >
           Доєднатись

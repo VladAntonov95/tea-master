@@ -44,6 +44,10 @@ const TeaSwiper = () => {
           slidesPerView: 3,
           spaceBetween: 32,
         },
+        1440: {
+          slidesPerView: 4,
+          spaceBetween: 32,
+        },
       }}
     >
       {teas.map((tea) => (
@@ -65,7 +69,7 @@ const TeaSwiper = () => {
             </h3>
             <p className="mt-2 text-center text-s">{tea.description}</p>
             <Button
-              className="mt-4 h-[40px] w-[150px] text-s font-semibold tablet:mt-8"
+              className="mx-auto mt-4 px-[72px] py-4 text-md font-semibold tablet:mt-8"
               title="Зробити замовленя чаю"
             >
               Замовити

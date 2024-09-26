@@ -14,7 +14,7 @@ module.exports = {
         mobile: "8px",
         tablet: "16px",
         laptop: "32px",
-        desktop: "32px",
+        desktop: "64px",
       },
     },
     screens: {

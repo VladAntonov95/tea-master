@@ -14,13 +14,13 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer id="footer" className="container bg-wood py-4 laptop:py-8">
+    <footer id="footer" className="bg-wood py-4 laptop:py-8">
       <section className="mx-auto">
         <section className="flex flex-col justify-between p-4 tablet:flex-row laptop:p-8">
           <h2 className="text-center text-2xl text-white-text tablet:max-w-[400px] desktop:min-w-[800px]">
             Чайна перетвореного світогляду «Пересвіт»
           </h2>
-          <div className="m-auto flex pt-4 tablet:m-0 tablet:ml-auto">
+          <div className="m-auto flex p-8 tablet:m-0 tablet:ml-auto">
             <Link
               href="https://www.instagram.com/chadao__world/"
               className="mr-5 self-center"
@@ -35,15 +35,15 @@ const Footer = () => {
             </Link>
           </div>
         </section>
-        <section className="flex flex-col tablet:flex-row">
+        <section className="flex flex-col justify-between tablet:flex-row">
           <Image
             src="/assets/images/footer/logo.png"
             width={200}
             height={200}
-            className="m-auto max-h-[100px] max-w-[100px] rounded-full p-4 tablet:max-h-[200px] tablet:max-w-[200px]"
+            className="m-auto max-h-[100px] max-w-[100px] rounded-full p-4 tablet:m-0 tablet:ml-[110px] tablet:max-h-[200px] tablet:max-w-[200px] laptop:ml-[125px]"
             alt="Логотип чайної школи Пресвіт"
           />
-          <div className="tablet:w-[450px] laptop:w-[630px]">
+          <div className="tablet:p-8">
             <ul className="text-center">
               <li>
                 <Link href="" className="text-sm text-white-text underline">

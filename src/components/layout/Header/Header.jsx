@@ -1,4 +1,7 @@
 "use client";
+// import useState from react
+import { useState } from "react";
+
 // imort next Links
 import Link from "next/link";
 
@@ -10,12 +13,17 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 // Header component
 const Header = ({ onSectionClick, onBack }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   // navigation links
   const links = [
     { text: "Чай", id: "tea" },
     { text: "Посуда", id: "tableware" },
     { text: "Чайна школа", id: "school" },
   ];
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <header className="container sticky top-0 z-50 mx-auto w-[100%] max-w-[1440px] border-b border-b-sections-border bg-background">
@@ -26,11 +34,12 @@ const Header = ({ onSectionClick, onBack }) => {
           height={100}
           className="max-h-[70px] max-w-[70px] rounded-full p-4 tablet:max-h-[100px] tablet:max-w-[100px]"
           alt="Логотип чайноъ школи Пресвіт"
+          onClick={onBack}
         />
         <Link
           onClick={onBack}
           href="#"
-          className="font-CrimsonPro hidden max-w-[285px] items-center text-center text-lg font-bold laptop:flex"
+          className="font-CrimsonPro hidden max-w-[430px] items-center text-center text-lg font-bold text-wood laptop:flex"
         >
           Чайна Перетвореного Світогляду
         </Link>
@@ -51,10 +60,32 @@ const Header = ({ onSectionClick, onBack }) => {
             ))}
           </ul>
         </nav>
-        <button className="ml-auto pr-4 laptop:hidden">
+        <button className="ml-auto pr-4 laptop:hidden" onClick={toggleMenu}>
           <GiHamburgerMenu className="h-8 w-8" />
         </button>
       </section>
+      {isMenuOpen && (
+        <nav className="laptop:hidden">
+          <ul className="flex flex-col items-center bg-background p-4">
+            {links.map((link) => (
+              <li
+                key={link.text}
+                className="w-full border-b border-b-sections-border p-4 text-center text-dark-text hover:text-accent"
+              >
+                <button
+                  className="font-CrimsonPro text-l font-medium"
+                  onClick={() => {
+                    onSectionClick(link.id);
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  {link.text}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </header>
   );
 };

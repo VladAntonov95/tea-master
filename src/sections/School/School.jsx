@@ -50,7 +50,7 @@ export const School = () => {
           className="mx-auto max-h-[280px] max-w-[312px] bigMobile:max-w-[409px] tablet:self-center laptop:max-h-[360px] laptop:max-w-[680px]"
         ></iframe>
       </div>
-      <article className="flex flex-col rounded-lg p-4 shadow-custom laptop:p-8">
+      <article className="flex flex-col rounded-3xl p-4 shadow-custom laptop:p-8">
         <p className="text-sm">
           В чайній школі «Пересвіт» де проходять навчання, бажаючі отримати
           унікальні знання, дізнатись тонкощі та особливості чайної справи,
@@ -68,9 +68,9 @@ export const School = () => {
         </p>
         <Button
           title="Доєднатися до чайної школи ʼПресвітʼ"
-          className="mx-auto mt-4 px-[72px] py-4 text-md font-semibold laptop:mt-8"
+          className="mx-auto mt-4 py-4 pl-[65px] pr-[72px] text-md font-semibold laptop:mt-8"
         >
-          Доєднатися до школи!
+          Доєднатися
         </Button>
       </article>
     </section>
