@@ -25,7 +25,7 @@ const Hero = () => {
           отримувати необхідний стан за допомогою чашки чаю.
         </p>
         <Button
-          className="mx-auto mt-4 py-2 text-center text-md font-semibold tablet:mx-0 tablet:mt-auto"
+          className="mx-auto mt-4 min-w-[238px] py-2 text-center text-md font-semibold tablet:mx-0 tablet:mt-auto"
           title="Доєднатися до школи прямо сейчас"
         >
           Доєднатись

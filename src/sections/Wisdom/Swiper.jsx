@@ -17,10 +17,7 @@ import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 // import icons for arrows
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
-import IconButton from "@mui/material/IconButton";
-
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+//import material ui arrows
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 
@@ -52,7 +49,7 @@ const WisdomSwiper = () => {
                 }}
               ></div>
               <div className="bg-black absolute inset-0 opacity-50"></div>
-              <button>
+              <button className="hidden tablet:block">
                 <ArrowBackIosNewRoundedIcon
                   fontSize="large"
                   className="swiper-button-prev text-white-text"
@@ -66,7 +63,7 @@ const WisdomSwiper = () => {
                   <RiDoubleQuotesR className="h-[40px] w-[40px]" />
                 </article>
               </section>
-              <button>
+              <button className="hidden tablet:block">
                 <ArrowForwardIosRoundedIcon
                   fontSize="large"
                   className="swiper-button-next text-white-text"
