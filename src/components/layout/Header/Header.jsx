@@ -26,7 +26,7 @@ const Header = ({ onSectionClick, onBack }) => {
   };
 
   return (
-    <header className="container sticky top-0 z-50 mx-auto w-[100%] max-w-[1440px] border-b border-b-sections-border bg-background">
+    <header className="container sticky top-0 z-50 mx-auto w-[100%] max-w-[1440px] bg-wood">
       <section className="flex w-full p-[10px] align-middle">
         <Image
           src="/assets/images/footer/logo.png"
@@ -39,7 +39,7 @@ const Header = ({ onSectionClick, onBack }) => {
         <Link
           onClick={onBack}
           href="#"
-          className="font-CrimsonPro hidden max-w-[430px] items-center text-center text-lg font-bold text-wood laptop:flex"
+          className="hidden max-w-[430px] items-center text-center text-lg font-bold text-white-text laptop:flex"
         >
           Чайна Перетвореного Світогляду
         </Link>
@@ -48,7 +48,7 @@ const Header = ({ onSectionClick, onBack }) => {
             {links.map((link) => (
               <li
                 key={link.text}
-                className="p-4 text-dark-text hover:text-accent"
+                className="p-4 text-white-text hover:text-accent"
               >
                 <button
                   className="font-CrimsonPro text-l font-medium"
@@ -61,19 +61,19 @@ const Header = ({ onSectionClick, onBack }) => {
           </ul>
         </nav>
         <button className="ml-auto pr-4 laptop:hidden" onClick={toggleMenu}>
-          <GiHamburgerMenu className="h-8 w-8" />
+          <GiHamburgerMenu className="h-8 w-8 text-white-text" />
         </button>
       </section>
       {isMenuOpen && (
         <nav className="laptop:hidden">
-          <ul className="flex flex-col items-center bg-background p-4">
+          <ul className="flex flex-col items-center bg-wood p-4">
             {links.map((link) => (
               <li
                 key={link.text}
-                className="w-full border-b border-b-sections-border p-4 text-center text-dark-text hover:text-accent"
+                className="w-full border-b border-b-sections-border p-4 text-center text-white-text hover:text-accent"
               >
                 <button
-                  className="font-CrimsonPro text-l font-medium"
+                  className="text-l font-medium"
                   onClick={() => {
                     onSectionClick(link.id);
                     setIsMenuOpen(false);

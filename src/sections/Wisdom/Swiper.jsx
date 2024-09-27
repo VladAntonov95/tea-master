@@ -17,6 +17,13 @@ import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 // import icons for arrows
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
+import IconButton from "@mui/material/IconButton";
+
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
+import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
+
 // swiper component
 const WisdomSwiper = () => {
   return (
@@ -33,7 +40,6 @@ const WisdomSwiper = () => {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         }}
-        // breakpoints={...}
       >
         {wisdoms.map((wisdom) => (
           <SwiperSlide key={wisdom.id} className="max-h-[506px] w-full">
@@ -46,8 +52,11 @@ const WisdomSwiper = () => {
                 }}
               ></div>
               <div className="bg-black absolute inset-0 opacity-50"></div>
-              <button className="swiper-button-prev bg-white hidden rounded-full p-2 shadow-lg tablet:block">
-                <AiOutlineLeft className="text-black h-8 w-8" />
+              <button>
+                <ArrowBackIosNewRoundedIcon
+                  fontSize="large"
+                  className="swiper-button-prev text-white-text"
+                />
               </button>
               <section className="relative z-10 mx-auto flex max-h-[506px] max-w-[280px] items-center justify-between rounded-3xl bg-background p-4 shadow-custom bigMobile:max-w-[350px] tablet:max-w-[400px] laptop:max-w-[600px] desktop:max-w-[800px]">
                 <article className="text-center tablet:p-8">
@@ -57,8 +66,11 @@ const WisdomSwiper = () => {
                   <RiDoubleQuotesR className="h-[40px] w-[40px]" />
                 </article>
               </section>
-              <button className="swiper-button-next bg-white hidden rounded-full p-2 shadow-lg tablet:block">
-                <AiOutlineRight className="text-black h-8 w-8" />
+              <button>
+                <ArrowForwardIosRoundedIcon
+                  fontSize="large"
+                  className="swiper-button-next text-white-text"
+                />
               </button>
             </section>
           </SwiperSlide>

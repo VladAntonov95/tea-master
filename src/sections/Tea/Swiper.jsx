@@ -69,7 +69,7 @@ const TeaSwiper = () => {
             </h3>
             <p className="mt-2 text-center text-s">{tea.description}</p>
             <Button
-              className="mx-auto mt-4 px-[72px] py-4 text-md font-semibold tablet:mt-8"
+              className="mx-auto mt-4 px-[72px] py-2 text-md font-semibold tablet:mt-8"
               title="Зробити замовленя чаю"
             >
               Замовити

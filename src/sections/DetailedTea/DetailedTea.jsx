@@ -40,7 +40,7 @@ const DetailedTea = ({ onBack }) => {
               </h3>
               <p className="text-m">{tea.bigDescription}</p>
               <Button
-                className="mx-auto mt-4 px-[72px] py-4 text-md font-semibold tablet:mt-auto"
+                className="mx-auto mt-4 px-[72px] py-2 text-md font-semibold tablet:mt-auto"
                 title="Зробити замовленя чаю"
               >
                 {`Замовити`}

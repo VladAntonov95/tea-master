@@ -68,7 +68,7 @@ export const School = () => {
         </p>
         <Button
           title="Доєднатися до чайної школи ʼПресвітʼ"
-          className="mx-auto mt-4 py-4 pl-[65px] pr-[72px] text-md font-semibold laptop:mt-8"
+          className="mx-auto mt-4 py-2 pl-[65px] pr-[72px] text-md font-semibold laptop:mt-8"
         >
           Доєднатися
         </Button>

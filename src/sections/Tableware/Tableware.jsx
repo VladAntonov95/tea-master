@@ -92,7 +92,7 @@ export const Tableware = () => {
       </section>
       <Button
         title="Зробити замовлення посуду"
-        className="m-auto mt-8 px-[72px] py-4 text-md font-semibold"
+        className="m-auto mt-8 px-[72px] py-2 text-md font-semibold"
       >
         Замовити
       </Button>
