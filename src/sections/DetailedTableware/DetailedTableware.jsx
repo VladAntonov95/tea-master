@@ -19,6 +19,7 @@ const DetailedTableware = ({ onBack }) => {
 
   const handleTablewareSelect = (tableware) => {
     setSelectedTableware(tableware);
+    window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   const handleBackToList = () => {

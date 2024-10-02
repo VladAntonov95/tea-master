@@ -14,6 +14,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 // Header component
 const Header = ({ onSectionClick, onBack }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   // navigation links
   const links = [
     { text: "Чай", id: "tea" },

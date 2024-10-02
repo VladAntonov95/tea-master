@@ -37,9 +37,19 @@ export default function RootLayout({ children }) {
   // State to show ditailed section
   const [activeSection, setActiveSection] = useState("");
 
+  // State to reset selected tea
+  const [selectedTea, setSelectedTea] = useState(null);
+  const [selectedTableware, setSelectedTableware] = useState(null);
+
   // Function to handle section click
   const handleSectionClick = (section) => {
+    if (section === "tea") {
+      setSelectedTea(null);
+    } else if (section === "tableware") {
+      setSelectedTableware(null);
+    }
     setActiveSection(section);
+    window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   // Function to handle back click
@@ -54,9 +64,19 @@ export default function RootLayout({ children }) {
         <main className={`${activeSection ? "hidden" : "block"}`}>
           {children}
         </main>
-        {activeSection === "tea" && <DetailedTea onBack={handleBackClick} />}
+        {activeSection === "tea" && (
+          <DetailedTea
+            onBack={handleBackClick}
+            selectedTea={selectedTea}
+            onSelectTea={setSelectedTea}
+          />
+        )}
         {activeSection === "tableware" && (
-          <DetailedTableware onBack={handleBackClick} />
+          <DetailedTableware
+            onBack={handleBackClick}
+            selectedTableware={selectedTableware}
+            onSelectTableware={setSelectedTableware}
+          />
         )}
         {activeSection === "school" && (
           <DetailedSchool onBack={handleBackClick} />

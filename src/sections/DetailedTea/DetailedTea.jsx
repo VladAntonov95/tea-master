@@ -1,6 +1,3 @@
-// import useState from react
-import { useState } from "react";
-
 // import arrow back
 import { IoIosArrowBack } from "react-icons/io";
 
@@ -14,15 +11,14 @@ import Button from "@/components/Button/Button";
 import { teas } from "../Tea/teas";
 
 // create DatailedTea component
-const DetailedTea = ({ onBack }) => {
-  const [selectedTea, setSelectedTea] = useState(null);
-
+const DetailedTea = ({ onBack, selectedTea, onSelectTea }) => {
   const handleTeaSelect = (tea) => {
-    setSelectedTea(tea);
+    onSelectTea(tea);
+    window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   const handleBackToList = () => {
-    setSelectedTea(null);
+    onSelectTea(null);
   };
 
   return (
