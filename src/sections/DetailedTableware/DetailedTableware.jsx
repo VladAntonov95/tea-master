@@ -14,16 +14,18 @@ import Button from "@/components/Button/Button";
 import { tablewares } from "./tableware";
 
 // create details tableware component
-const DetailedTableware = ({ onBack }) => {
-  const [selectedTableware, setSelectedTableware] = useState(null);
-
+const DetailedTableware = ({
+  onBack,
+  selectedTableware,
+  onSelectTableware,
+}) => {
   const handleTablewareSelect = (tableware) => {
-    setSelectedTableware(tableware);
+    onSelectTableware(tableware);
     window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   const handleBackToList = () => {
-    setSelectedTableware(null);
+    onSelectTableware(null);
   };
 
   return (
