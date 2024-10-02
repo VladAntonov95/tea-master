@@ -1,3 +1,14 @@
 .swiper {
   padding: 4px;
+  padding-bottom: 40px;
+}
+
+.swiper-pagination-bullet {
+  background-color: #ccc;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #16c098;
+  opacity: 1;
 }

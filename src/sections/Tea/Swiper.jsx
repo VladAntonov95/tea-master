@@ -6,10 +6,11 @@ import Button from "@/components/Button/Button";
 
 // import swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/pagination";
 import "./swiper.css";
 
 // import tea base
@@ -26,7 +27,11 @@ const TeaSwiper = () => {
         delay: 8000,
         disableOnInteraction: false,
       }}
-      modules={[Autoplay]}
+      pagination={{
+        clickable: true,
+        dynamicBullets: true,
+      }}
+      modules={[Autoplay, Pagination]}
       breakpoints={{
         0: {
           slidesPerView: 1,
