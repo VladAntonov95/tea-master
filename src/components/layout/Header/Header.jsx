@@ -12,7 +12,7 @@ import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 // Header component
-const Header = ({ onSectionClick, onBack }) => {
+const Header = ({ onSectionClick, onBack, activeSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // navigation links
@@ -27,7 +27,11 @@ const Header = ({ onSectionClick, onBack }) => {
   };
 
   return (
-    <header className="bg-dark-green sticky top-0 z-50 mx-auto">
+    <header
+      className={`${
+        activeSection === "tableware" ? "bg-tableware-color" : "bg-dark-green"
+      } sticky top-0 z-50 mx-auto`}
+    >
       <section className="mx-auto flex w-full max-w-[1440px] p-[10px] align-middle">
         <Image
           src="/assets/images/footer/logo.png"
@@ -49,7 +53,7 @@ const Header = ({ onSectionClick, onBack }) => {
             {links.map((link) => (
               <li
                 key={link.text}
-                className="hover:text-hover-color p-4 text-white-text"
+                className={`${activeSection === "tableware" ? "hover:text-tableware-hover" : "hover:text-hover-color"} p-4 text-white-text`}
               >
                 <button
                   className="text-l font-medium"
@@ -67,11 +71,17 @@ const Header = ({ onSectionClick, onBack }) => {
       </section>
       {isMenuOpen && (
         <nav className="laptop:hidden">
-          <ul className="bg-dark-green flex flex-col items-center px-4 pb-4">
+          <ul
+            className={`${
+              activeSection === "tableware"
+                ? "bg-tableware-color"
+                : "bg-dark-green"
+            } flex flex-col items-center px-4 pb-4`}
+          >
             {links.map((link) => (
               <li
                 key={link.text}
-                className="hover:text-hover-color w-full px-4 pb-4 text-center text-white-text"
+                className={`${activeSection === "tableware" ? "hover:text-tableware-hover" : "hover:text-hover-color"} w-full px-4 pb-4 text-center text-white-text`}
               >
                 <button
                   className="text-l font-medium"

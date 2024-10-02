@@ -46,7 +46,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ua">
       <body className={`font-mono antialiased`}>
-        <Header onSectionClick={handleSectionClick} onBack={handleBackClick} />
+        <Header
+          onSectionClick={handleSectionClick}
+          onBack={handleBackClick}
+          activeSection={activeSection}
+        />
         <main className={`${activeSection ? "hidden" : "block"}`}>
           {children}
         </main>
@@ -62,12 +66,13 @@ export default function RootLayout({ children }) {
             onBack={handleBackClick}
             selectedTableware={selectedTableware}
             onSelectTableware={setSelectedTableware}
+            activeSection={activeSection}
           />
         )}
         {activeSection === "school" && (
           <DetailedSchool onBack={handleBackClick} />
         )}
-        <Footer />
+        <Footer activeSection={activeSection} />
       </body>
     </html>
   );

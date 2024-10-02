@@ -18,6 +18,7 @@ const DetailedTableware = ({
   onBack,
   selectedTableware,
   onSelectTableware,
+  activeSection,
 }) => {
   const handleTablewareSelect = (tableware) => {
     onSelectTableware(tableware);
@@ -34,7 +35,9 @@ const DetailedTableware = ({
         <>
           <section className="flex py-8">
             <button onClick={onBack}>
-              <IoIosArrowBack className="text-dark-green hover:text-hover-color h-10 w-10" />
+              <IoIosArrowBack
+                className={`text-tableware-color hover:text-tableware-hover h-10 w-10`}
+              />
             </button>
             <h2 className="mx-auto text-2xl font-bold">Наявний посуд</h2>
           </section>
@@ -62,12 +65,14 @@ const DetailedTableware = ({
                     className="mx-auto mt-4 px-[72px] py-2 text-md font-semibold"
                     title="Детальніше про посуд"
                     onClick={() => handleTablewareSelect(tableware)}
+                    activeSection={activeSection}
                   >
                     {`Детальніше`}
                   </Button>
                   <Button
                     className="mx-auto mt-4 px-[72px] py-2 text-md font-semibold"
                     title="Зробити замовленя посуду"
+                    activeSection={activeSection}
                   >
                     {`Замовити`}
                   </Button>
@@ -80,7 +85,7 @@ const DetailedTableware = ({
         <section>
           <section className="flex py-8">
             <button onClick={handleBackToList}>
-              <IoIosArrowBack className="text-dark-green hover:text-hover-color h-10 w-10" />
+              <IoIosArrowBack className="text-tableware-color hover:text-tableware-hover h-10 w-10" />
             </button>
             <h2 className="mx-auto text-lg font-bold bigMobile:text-xl">
               {selectedTableware.name}
@@ -103,6 +108,7 @@ const DetailedTableware = ({
               <Button
                 className="mx-auto mt-4 px-[72px] py-2 text-md font-semibold"
                 title="Зробити замовленя посуду"
+                activeSection={activeSection}
               >
                 {`Замовити`}
               </Button>

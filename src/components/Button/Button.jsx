@@ -1,8 +1,8 @@
 "use client";
-const Button = ({ children, title, className, onClick }) => {
+const Button = ({ children, title, className, onClick, activeSection }) => {
   return (
     <button
-      className={`pointer bg-dark-green hover:bg-hover-color max-w-[238px] rounded-[12px] text-center text-white-text ${className}`}
+      className={` ${activeSection === "tableware" ? "bg-tableware-color hover:bg-tableware-hover" : "bg-dark-green hover:bg-hover-color"} pointer max-w-[238px] rounded-[12px] text-center text-white-text ${className}`}
       title={title}
       onClick={onClick}
     >

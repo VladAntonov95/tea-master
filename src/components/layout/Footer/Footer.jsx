@@ -12,9 +12,14 @@ import Link from "next/link";
 // import next image
 import Image from "next/image";
 
-const Footer = () => {
+const Footer = ({ activeSection }) => {
   return (
-    <footer id="footer" className="bg-dark-green py-4 laptop:py-8">
+    <footer
+      id="footer"
+      className={`${
+        activeSection === "tableware" ? "bg-tableware-color" : "bg-dark-green"
+      } py-4 laptop:py-8`}
+    >
       <section className="mx-auto max-w-[1440px]">
         <section className="flex flex-col justify-between p-4 tablet:flex-row laptop:p-8">
           <h2 className="text-center text-2xl text-white-text tablet:max-w-[400px] desktop:min-w-[800px]">

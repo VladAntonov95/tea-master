@@ -34,6 +34,7 @@ module.exports = {
     colors: {
       wood: "#DD4132",
       "dark-green": "#50644d",
+      "tableware-color": "#9E4624",
       accent: "#FF6822",
       background: "white",
       "sections-border": "#f4f4f4",
@@ -43,6 +44,7 @@ module.exports = {
       swiper: "#F2C6A0",
       "black-text": "#000",
       "hover-color": "#598318",
+      "tableware-hover": "#B1533E",
     },
     extend: {
       fontFamily: {
