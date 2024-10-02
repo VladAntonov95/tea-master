@@ -52,7 +52,7 @@ const Header = ({ onSectionClick, onBack }) => {
                 className="hover:text-hover-color p-4 text-white-text"
               >
                 <button
-                  className="font-CrimsonPro text-l font-medium"
+                  className="text-l font-medium"
                   onClick={() => onSectionClick(link.id)}
                 >
                   {link.text}

@@ -14,20 +14,6 @@ import DetailedTea from "@/sections/DetailedTea/DetailedTea";
 import DetailedTableware from "@/sections/DetailedTableware/DetailedTableware";
 import DetailedSchool from "@/sections/DetailedSchool/DetailedSchool";
 
-import { Crimson_Pro, Roboto } from "next/font/google";
-
-const crimsonPro = Crimson_Pro({
-  weight: ["200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const roboto = Roboto({
-  weight: ["300", "400", "500", "700"],
-  subsets: ["cyrillic"],
-  display: "swap",
-});
-
 // export const metadata = {
 //   title: "Чайна Перетвореного Світогляду",
 //   description: "Чайна Перетвореного Світогляду",
@@ -59,7 +45,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="ua">
-      <body className={`${roboto.variable} ${crimsonPro.variable} antialiased`}>
+      <body className={`font-mono antialiased`}>
         <Header onSectionClick={handleSectionClick} onBack={handleBackClick} />
         <main className={`${activeSection ? "hidden" : "block"}`}>
           {children}
