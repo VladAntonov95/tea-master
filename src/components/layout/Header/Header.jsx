@@ -17,7 +17,7 @@ const Header = ({ onSectionClick, onBack }) => {
   // navigation links
   const links = [
     { text: "Чай", id: "tea" },
-    { text: "Посуда", id: "tableware" },
+    { text: "Посуд", id: "tableware" },
     { text: "Чайна школа", id: "school" },
   ];
 
@@ -26,8 +26,8 @@ const Header = ({ onSectionClick, onBack }) => {
   };
 
   return (
-    <header className="container sticky top-0 z-50 mx-auto w-[100%] max-w-[1440px] bg-wood">
-      <section className="flex w-full p-[10px] align-middle">
+    <header className="sticky top-0 z-50 mx-auto bg-wood">
+      <section className="mx-auto flex w-full max-w-[1440px] p-[10px] align-middle">
         <Image
           src="/assets/images/footer/logo.png"
           width={100}
