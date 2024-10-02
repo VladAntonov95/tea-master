@@ -33,6 +33,7 @@ module.exports = {
     },
     colors: {
       wood: "#DD4132",
+      "dark-green": "#50644d",
       accent: "#FF6822",
       background: "white",
       "sections-border": "#f4f4f4",
@@ -40,9 +41,8 @@ module.exports = {
       "white-text": "#fff",
       "gray-text": "#7a7c7f",
       swiper: "#F2C6A0",
-      stroke: "#20201D",
-      backdrop: "rgba(149, 149, 149, 0.6)",
       "black-text": "#000",
+      "hover-color": "#598318",
     },
     extend: {
       fontFamily: {

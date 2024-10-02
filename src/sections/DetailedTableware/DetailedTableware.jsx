@@ -34,7 +34,7 @@ const DetailedTableware = ({
         <>
           <section className="flex py-8">
             <button onClick={onBack}>
-              <IoIosArrowBack className="h-10 w-10 text-wood" />
+              <IoIosArrowBack className="text-dark-green hover:text-hover-color h-10 w-10" />
             </button>
             <h2 className="mx-auto text-2xl font-bold">Наявний посуд</h2>
           </section>
@@ -80,7 +80,7 @@ const DetailedTableware = ({
         <section>
           <section className="flex py-8">
             <button onClick={handleBackToList}>
-              <IoIosArrowBack className="h-10 w-10 text-wood" />
+              <IoIosArrowBack className="text-dark-green hover:text-hover-color h-10 w-10" />
             </button>
             <h2 className="mx-auto text-lg font-bold bigMobile:text-xl">
               {selectedTableware.name}

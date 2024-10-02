@@ -27,7 +27,7 @@ const Header = ({ onSectionClick, onBack }) => {
   };
 
   return (
-    <header className="sticky top-0 z-50 mx-auto bg-wood">
+    <header className="bg-dark-green sticky top-0 z-50 mx-auto">
       <section className="mx-auto flex w-full max-w-[1440px] p-[10px] align-middle">
         <Image
           src="/assets/images/footer/logo.png"
@@ -49,7 +49,7 @@ const Header = ({ onSectionClick, onBack }) => {
             {links.map((link) => (
               <li
                 key={link.text}
-                className="p-4 text-white-text hover:text-accent"
+                className="hover:text-hover-color p-4 text-white-text"
               >
                 <button
                   className="font-CrimsonPro text-l font-medium"
@@ -67,11 +67,11 @@ const Header = ({ onSectionClick, onBack }) => {
       </section>
       {isMenuOpen && (
         <nav className="laptop:hidden">
-          <ul className="flex flex-col items-center bg-wood p-4">
+          <ul className="bg-dark-green flex flex-col items-center p-4">
             {links.map((link) => (
               <li
                 key={link.text}
-                className="w-full border-b border-b-sections-border p-4 text-center text-white-text hover:text-accent"
+                className="hover:text-hover-color w-full border-b border-b-sections-border p-4 text-center text-white-text"
               >
                 <button
                   className="text-l font-medium"

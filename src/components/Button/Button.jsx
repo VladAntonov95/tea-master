@@ -2,7 +2,7 @@
 const Button = ({ children, title, className, onClick }) => {
   return (
     <button
-      className={`pointer max-w-[238px] rounded-[12px] bg-wood text-center text-white-text hover:bg-accent ${className}`}
+      className={`pointer bg-dark-green hover:bg-hover-color max-w-[238px] rounded-[12px] text-center text-white-text ${className}`}
       title={title}
       onClick={onClick}
     >
