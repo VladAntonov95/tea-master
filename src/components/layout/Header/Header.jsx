@@ -67,11 +67,11 @@ const Header = ({ onSectionClick, onBack }) => {
       </section>
       {isMenuOpen && (
         <nav className="laptop:hidden">
-          <ul className="bg-dark-green flex flex-col items-center p-4">
+          <ul className="bg-dark-green flex flex-col items-center px-4 pb-4">
             {links.map((link) => (
               <li
                 key={link.text}
-                className="hover:text-hover-color w-full border-b border-b-sections-border p-4 text-center text-white-text"
+                className="hover:text-hover-color w-full px-4 pb-4 text-center text-white-text"
               >
                 <button
                   className="text-l font-medium"
