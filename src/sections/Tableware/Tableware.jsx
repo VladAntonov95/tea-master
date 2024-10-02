@@ -8,7 +8,7 @@ import Button from "@/components/Button/Button";
 // Tableware component
 export const Tableware = () => {
   return (
-    <section className="container m-auto flex max-w-[320px] flex-col border-b border-b-sections-border py-4 bigMobile:max-w-[400px] tablet:max-w-[768px] laptop:max-w-[1024px] laptop:py-8 desktop:max-w-[1440px]">
+    <section className="container m-auto flex max-w-[320px] flex-col border-b border-b-sections-border py-4 mobile:max-w-[375px] bigMobile:max-w-[440px] tablet:max-w-[768px] laptop:max-w-[1024px] laptop:py-8 desktop:max-w-[1440px]">
       <section className="flex justify-between">
         <section className="flex flex-col tablet:flex-row">
           <Image
