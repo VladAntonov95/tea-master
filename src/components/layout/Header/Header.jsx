@@ -20,6 +20,7 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
     { text: "Чай", id: "tea" },
     { text: "Посуд", id: "tableware" },
     { text: "Чайна школа", id: "school" },
+    { text: "Історія", id: "history" },
   ];
 
   const toggleMenu = () => {

@@ -13,6 +13,7 @@ import Footer from "@/components/layout/Footer/Footer";
 import DetailedTea from "@/sections/DetailedTea/DetailedTea";
 import DetailedTableware from "@/sections/DetailedTableware/DetailedTableware";
 import DetailedSchool from "@/sections/DetailedSchool/DetailedSchool";
+import History from "@/sections/History/History";
 
 // export const metadata = {
 //   title: "Чайна Перетвореного Світогляду",
@@ -73,6 +74,7 @@ export default function RootLayout({ children }) {
         {activeSection === "school" && (
           <DetailedSchool onBack={handleBackClick} />
         )}
+        {activeSection === "history" && <History onBack={handleBackClick} />}
         <Footer activeSection={activeSection} />
       </body>
     </html>
