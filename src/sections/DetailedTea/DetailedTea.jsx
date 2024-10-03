@@ -29,7 +29,9 @@ const DetailedTea = ({ onBack, selectedTea, onSelectTea }) => {
             <button onClick={onBack}>
               <IoIosArrowBack className="text-dark-green hover:text-hover-color h-10 w-10" />
             </button>
-            <h2 className="mx-auto text-lg font-bold">Наявні Чаї</h2>
+            <h2 className="font-merriweather mx-auto text-lg font-bold">
+              Наявні Чаї
+            </h2>
           </section>
           <section className="mx-auto max-w-[700px] laptop:max-w-[1024px]">
             {teas.map((tea) => (
@@ -46,20 +48,20 @@ const DetailedTea = ({ onBack, selectedTea, onSelectTea }) => {
                   className="h-full min-h-[348px] w-[400px] rounded-[12px] tablet:mr-8 tablet:min-h-[371px] tablet:min-w-[256px] laptop:max-h-[350px] laptop:min-h-[348px] laptop:min-w-[450px]"
                 />
                 <section className="flex max-w-[500px] flex-col justify-between laptop:max-h-[350px]">
-                  <h3 className="my-4 text-l tablet:mb-8 tablet:mt-0 tablet:text-lg">
+                  <h3 className="font-merriweather my-4 text-l tablet:mb-8 tablet:mt-0 tablet:text-lg">
                     {tea.name}
                   </h3>
-                  <p className="text-m">{tea.bigDescription}</p>
-                  <p className="p-4 text-m">{`Вартість: ${tea.price}грн`}</p>
+                  <p className="font-roboto text-m">{tea.bigDescription}</p>
+                  <p className="p-4 font-roboto text-m">{`Вартість: ${tea.price}грн`}</p>
                   <Button
-                    className="mx-auto mt-4 px-[72px] py-2 text-sm font-semibold"
+                    className="mx-auto mt-4 px-[72px] py-2 font-roboto text-sm font-semibold"
                     title="Детальніше про чай"
-                    onClick={() => handleTeaSelect(tea)} // Выбор чая
+                    onClick={() => handleTeaSelect(tea)}
                   >
                     {`Детальніше`}
                   </Button>
                   <Button
-                    className="mx-auto mt-4 px-[72px] py-2 text-sm font-semibold"
+                    className="mx-auto mt-4 px-[72px] py-2 font-roboto text-sm font-semibold"
                     title="Зробити замовленя чаю"
                   >
                     {`Замовити`}
@@ -75,7 +77,7 @@ const DetailedTea = ({ onBack, selectedTea, onSelectTea }) => {
             <button onClick={handleBackToList}>
               <IoIosArrowBack className="text-dark-green hover:text-hover-color h-10 w-10" />
             </button>
-            <h2 className="mx-auto text-lg font-bold bigMobile:text-xl tablet:text-lg">
+            <h2 className="font-merriweather mx-auto text-lg font-bold bigMobile:text-xl tablet:text-lg">
               {selectedTea.name}
             </h2>
           </section>
@@ -89,12 +91,12 @@ const DetailedTea = ({ onBack, selectedTea, onSelectTea }) => {
               className="mx-auto h-full min-h-[348px] w-[400px] rounded-[12px] tablet:max-h-[400px] tablet:min-w-[700px] laptop:max-h-[350px] laptop:min-h-[348px] laptop:min-w-[450px]"
             />
             <section className="flex flex-col justify-between laptop:max-h-[350px]">
-              <p className="py-4 text-center text-m">
+              <p className="py-4 text-center font-roboto text-m">
                 {selectedTea.pageDescription}
               </p>
-              <p className="text-center text-m">{`Вартість: ${selectedTea.price}грн`}</p>
+              <p className="text-center font-roboto text-m">{`Вартість: ${selectedTea.price}грн`}</p>
               <Button
-                className="mx-auto mt-4 px-[72px] py-2 text-sm font-semibold"
+                className="mx-auto mt-4 px-[72px] py-2 font-roboto text-sm font-semibold"
                 title="Зробити замовленя чаю"
               >
                 {`Замовити`}

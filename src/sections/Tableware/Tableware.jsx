@@ -34,7 +34,7 @@ export const Tableware = () => {
               className="h-[100px] w-[100px] rounded-full"
             />
           </div>
-          <p className="my-auto text-left text-m tablet:ml-4 laptop:ml-0 laptop:max-w-[650px] desktop:max-w-[950px]">
+          <p className="my-auto text-left font-roboto text-m tablet:ml-4 laptop:ml-0 laptop:max-w-[650px] desktop:max-w-[950px]">
             Посуд ручної роботи створений з унікальної ісинської глини, яка
             цінується за свої особливі властивості та природну красу. Кожен
             виріб виготовляється з любов’ю та майстерністю, передаючи
@@ -46,7 +46,7 @@ export const Tableware = () => {
       </section>
       <section className="mt-4 flex justify-between laptop:mt-8">
         <section className="flex flex-col items-center tablet:flex-row">
-          <p className="mb-8 text-left text-m tablet:mb-0 laptop:max-w-[650px] desktop:max-w-[950px]">
+          <p className="mb-8 text-left font-roboto text-m tablet:mb-0 laptop:max-w-[650px] desktop:max-w-[950px]">
             Чайники з ісинської глини — це втілення справжнього мистецтва. Вони
             мають здатність зберігати тепло та розкривати найтонші ноти ароматів
             чаю. Завдяки своїй пористості, чайник поступово вбирає аромати чаю,
@@ -92,7 +92,7 @@ export const Tableware = () => {
       </section>
       <Button
         title="Зробити замовлення посуду"
-        className="m-auto mt-8 px-[72px] py-2 text-sm font-semibold"
+        className="m-auto mt-8 px-[72px] py-2 font-roboto text-sm font-semibold"
       >
         Замовити
       </Button>

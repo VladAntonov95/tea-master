@@ -45,13 +45,13 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
         <Link
           onClick={onBack}
           href="#"
-          className="hidden max-w-[430px] items-center text-center text-lg font-bold text-white-text laptop:flex"
+          className="font-playfair hidden max-w-[430px] items-center text-center text-lg font-bold text-white-text laptop:flex"
         >
           <span className="text-header-symbol-color">茶</span>CHADAO
           <span className="text-header-symbol-color">道</span>
         </Link>
         <nav className="hidden items-center laptop:flex">
-          <ul className="flex text-md">
+          <ul className="font-opensans flex text-md">
             {links.map((link) => (
               <li
                 key={link.text}

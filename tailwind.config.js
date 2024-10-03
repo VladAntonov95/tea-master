@@ -49,8 +49,10 @@ module.exports = {
     },
     extend: {
       fontFamily: {
+        playfair: ["Playfair Display", "serif"],
+        opensans: ["Open Sans", "sans-serif"],
+        merriweather: ["Merriweather", "serif"],
         roboto: ["Roboto", "sans-serif"],
-        crimson: ["Crimson Pro", "serif"],
       },
       boxShadow: {
         custom:
