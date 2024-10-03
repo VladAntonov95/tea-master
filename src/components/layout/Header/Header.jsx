@@ -76,12 +76,12 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
               activeSection === "tableware"
                 ? "bg-tableware-color"
                 : "bg-dark-green"
-            } flex flex-col items-center px-4 pb-4`}
+            } flex flex-col items-center px-4`}
           >
             {links.map((link) => (
               <li
                 key={link.text}
-                className={`${activeSection === "tableware" ? "hover:text-tableware-hover" : "hover:text-hover-color"} w-full px-4 pb-4 text-center text-white-text`}
+                className={`${activeSection === "tableware" ? "hover:text-tableware-hover" : "hover:text-hover-color"} w-full px-4 pb-8 text-center text-white-text`}
               >
                 <button
                   className="text-l font-medium"

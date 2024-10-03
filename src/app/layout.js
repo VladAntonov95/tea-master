@@ -18,6 +18,7 @@ import DetailedSchool from "@/sections/DetailedSchool/DetailedSchool";
 //   title: "Чайна Перетвореного Світогляду",
 //   description: "Чайна Перетвореного Світогляду",
 // };
+// make server metadata
 
 export default function RootLayout({ children }) {
   // State to show ditailed section
