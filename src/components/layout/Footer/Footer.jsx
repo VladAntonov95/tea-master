@@ -18,10 +18,10 @@ const Footer = ({ activeSection }) => {
       id="footer"
       className={`${
         activeSection === "tableware" ? "bg-tableware-color" : "bg-dark-green"
-      } py-4 laptop:py-8`}
+      } pb-4 tablet:pb-0`}
     >
       <section className="mx-auto max-w-[1440px]">
-        <section className="flex flex-col justify-between p-4 tablet:flex-row laptop:p-8">
+        <section className="flex flex-col justify-between px-4 pt-4 tablet:flex-row laptop:px-8 laptop:pt-8">
           <h2 className="text-center text-lg text-white-text tablet:ml-[110px] tablet:max-w-[400px] tablet:text-left laptop:ml-[125px] desktop:min-w-[800px]">
             <span className="text-header-symbol-color">茶</span>CHADAO
             <span className="text-header-symbol-color">道</span>
@@ -50,7 +50,7 @@ const Footer = ({ activeSection }) => {
             alt="Логотип чайної школи Пресвіт"
           />
           <div className="tablet:p-8">
-            <ul className="text-center text-md">
+            <ul className="mb-8 text-center text-sm tablet:text-md">
               <li>
                 <Link
                   href=""
@@ -68,7 +68,7 @@ const Footer = ({ activeSection }) => {
                 </Link>
               </li>
             </ul>
-            <ul className="mt-2 text-md tablet:text-left laptop:ml-auto">
+            <ul className="text:sm mt-2 tablet:text-left tablet:text-md laptop:ml-auto">
               <li className="flex justify-center text-white-text">
                 <MdEmail className="mr-2 self-center" />
                 E-mail:
