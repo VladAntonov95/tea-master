@@ -2,14 +2,14 @@ import React from "react";
 
 const DetailedSchool = ({ onBack }) => {
   return (
-    <section className="p-8 bg-yellow-200">
-      <h2 className="text-4xl font-bold mb-4">Подробности о чайной школе</h2>
-      <p className="text-lg mb-4">
+    <section className="bg-yellow-200 p-8">
+      <h2 className="mb-4 text-lg font-bold">Подробности о чайной школе</h2>
+      <p className="mb-4 text-m">
         Узнайте больше о нашей чайной школе, курсах и методах обучения.
       </p>
       <button
         onClick={onBack}
-        className="mt-4 bg-blue-500 text-white py-2 px-4 rounded"
+        className="bg-blue-500 text-white mt-4 rounded px-4 py-2 text-sm"
       >
         Назад
       </button>

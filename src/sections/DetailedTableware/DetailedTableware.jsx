@@ -39,7 +39,7 @@ const DetailedTableware = ({
                 className={`text-tableware-color hover:text-tableware-hover h-10 w-10`}
               />
             </button>
-            <h2 className="mx-auto text-2xl font-bold">Наявний посуд</h2>
+            <h2 className="mx-auto text-lg font-bold">Наявний посуд</h2>
           </section>
           <section className="mx-auto max-w-[700px] laptop:max-w-[1024px]">
             {tablewares.map((tableware) => (
@@ -56,13 +56,13 @@ const DetailedTableware = ({
                   className="h-full min-h-[348px] w-[400px] rounded-[12px] tablet:mr-8 tablet:min-h-[371px] tablet:min-w-[256px] laptop:max-h-[350px] laptop:min-h-[348px] laptop:min-w-[450px]"
                 />
                 <section className="flex max-w-[500px] flex-col justify-between laptop:max-h-[350px]">
-                  <h3 className="my-4 text-l tablet:mb-8 tablet:mt-0 tablet:text-lg">
+                  <h3 className="my-4 text-lg tablet:mb-8 tablet:mt-0 tablet:text-lg">
                     {tableware.name}
                   </h3>
                   <p className="text-m">{tableware.description}</p>
                   <p className="p-4 text-m">{`Вартість: ${tableware.price}грн`}</p>
                   <Button
-                    className="mx-auto mt-4 px-[72px] py-2 text-md font-semibold"
+                    className="mx-auto mt-4 px-[72px] py-2 text-sm font-semibold"
                     title="Детальніше про посуд"
                     onClick={() => handleTablewareSelect(tableware)}
                     activeSection={activeSection}
@@ -70,7 +70,7 @@ const DetailedTableware = ({
                     {`Детальніше`}
                   </Button>
                   <Button
-                    className="mx-auto mt-4 px-[72px] py-2 text-md font-semibold"
+                    className="mx-auto mt-4 px-[72px] py-2 text-sm font-semibold"
                     title="Зробити замовленя посуду"
                     activeSection={activeSection}
                   >
@@ -106,7 +106,7 @@ const DetailedTableware = ({
               </p>
               <p className="text-center text-m">{`Вартість: ${selectedTableware.price}грн`}</p>
               <Button
-                className="mx-auto mt-4 px-[72px] py-2 text-md font-semibold"
+                className="mx-auto mt-4 px-[72px] py-2 text-sm font-semibold"
                 title="Зробити замовленя посуду"
                 activeSection={activeSection}
               >

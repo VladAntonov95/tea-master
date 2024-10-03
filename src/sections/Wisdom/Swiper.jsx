@@ -58,8 +58,8 @@ const WisdomSwiper = () => {
               <section className="relative z-10 mx-auto flex max-h-[506px] max-w-[280px] items-center justify-between rounded-3xl bg-background p-4 shadow-custom bigMobile:max-w-[350px] tablet:max-w-[400px] laptop:max-w-[600px] desktop:max-w-[800px]">
                 <article className="text-center tablet:p-8">
                   <RiDoubleQuotesL className="ml-auto h-[40px] w-[40px]" />
-                  <h3 className="mt-4 text-m font-semibold">{wisdom.name}</h3>
-                  <p className="mt-2 text-s">{wisdom.wisdom}</p>
+                  <h3 className="mt-4 text-lg font-semibold">{wisdom.name}</h3>
+                  <p className="mt-2 text-m">{wisdom.wisdom}</p>
                   <RiDoubleQuotesR className="h-[40px] w-[40px]" />
                 </article>
               </section>

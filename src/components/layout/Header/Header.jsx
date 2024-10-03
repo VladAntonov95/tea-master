@@ -50,14 +50,14 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
           <span className="text-header-symbol-color">道</span>
         </Link>
         <nav className="hidden items-center laptop:flex">
-          <ul className="flex">
+          <ul className="flex text-md">
             {links.map((link) => (
               <li
                 key={link.text}
                 className={`${activeSection === "tableware" ? "hover:text-tableware-hover" : "hover:text-hover-color"} p-4 text-white-text`}
               >
                 <button
-                  className="text-l font-medium"
+                  className="font-medium"
                   onClick={() => onSectionClick(link.id)}
                 >
                   {link.text}

@@ -29,7 +29,7 @@ const DetailedTea = ({ onBack, selectedTea, onSelectTea }) => {
             <button onClick={onBack}>
               <IoIosArrowBack className="text-dark-green hover:text-hover-color h-10 w-10" />
             </button>
-            <h2 className="mx-auto text-2xl font-bold">Наявні Чаї</h2>
+            <h2 className="mx-auto text-lg font-bold">Наявні Чаї</h2>
           </section>
           <section className="mx-auto max-w-[700px] laptop:max-w-[1024px]">
             {teas.map((tea) => (
@@ -52,14 +52,14 @@ const DetailedTea = ({ onBack, selectedTea, onSelectTea }) => {
                   <p className="text-m">{tea.bigDescription}</p>
                   <p className="p-4 text-m">{`Вартість: ${tea.price}грн`}</p>
                   <Button
-                    className="mx-auto mt-4 px-[72px] py-2 text-md font-semibold"
+                    className="mx-auto mt-4 px-[72px] py-2 text-sm font-semibold"
                     title="Детальніше про чай"
                     onClick={() => handleTeaSelect(tea)} // Выбор чая
                   >
                     {`Детальніше`}
                   </Button>
                   <Button
-                    className="mx-auto mt-4 px-[72px] py-2 text-md font-semibold"
+                    className="mx-auto mt-4 px-[72px] py-2 text-sm font-semibold"
                     title="Зробити замовленя чаю"
                   >
                     {`Замовити`}
@@ -75,7 +75,7 @@ const DetailedTea = ({ onBack, selectedTea, onSelectTea }) => {
             <button onClick={handleBackToList}>
               <IoIosArrowBack className="text-dark-green hover:text-hover-color h-10 w-10" />
             </button>
-            <h2 className="mx-auto text-lg font-bold bigMobile:text-xl">
+            <h2 className="mx-auto text-lg font-bold bigMobile:text-xl tablet:text-lg">
               {selectedTea.name}
             </h2>
           </section>
@@ -94,7 +94,7 @@ const DetailedTea = ({ onBack, selectedTea, onSelectTea }) => {
               </p>
               <p className="text-center text-m">{`Вартість: ${selectedTea.price}грн`}</p>
               <Button
-                className="mx-auto mt-4 px-[72px] py-2 text-md font-semibold"
+                className="mx-auto mt-4 px-[72px] py-2 text-sm font-semibold"
                 title="Зробити замовленя чаю"
               >
                 {`Замовити`}

@@ -5,15 +5,15 @@ import Button from "@/components/Button/Button";
 export const School = () => {
   return (
     <section className="container m-auto border-b border-b-sections-border py-4 laptop:py-8">
-      <h2 className="mb-4 text-center text-2xl font-bold laptop:mb-8">
+      <h2 className="mb-4 text-center text-lg font-bold laptop:mb-8">
         Чайна школа «Пересвіт»
       </h2>
-      <p className="m-auto mb-4 text-md laptop:mb-8">
+      <p className="m-auto mb-4 text-m laptop:mb-8">
         Запрошуємо приєднатись до курсу для початківців чайна школа «Пересвіт»
         та отримати майстер-класс за наступними категоріями:
       </p>
       <div className="mb-4 flex flex-col tablet:flex-row laptop:mb-8">
-        <ul className="my-auto mb-4 space-y-2 text-sm tablet:mb-0">
+        <ul className="my-auto mb-4 space-y-5 text-m tablet:mb-0">
           <li className="before:mr-2 before:content-['🍵']">
             Знайомство з чаями. Види і класифікація
           </li>
@@ -51,7 +51,7 @@ export const School = () => {
         ></iframe>
       </div>
       <article className="flex flex-col rounded-3xl p-4 shadow-custom laptop:p-8">
-        <p className="text-sm">
+        <p className="text-m">
           В чайній школі «Пересвіт» де проходять навчання, бажаючі отримати
           унікальні знання, дізнатись тонкощі та особливості чайної справи,
           використовувати чаї в укріпленні свого організму, і звісно ж дивувати
@@ -68,7 +68,7 @@ export const School = () => {
         </p>
         <Button
           title="Доєднатися до чайної школи ʼПресвітʼ"
-          className="mx-auto mt-4 py-2 pl-[65px] pr-[72px] text-md font-semibold laptop:mt-8"
+          className="mx-auto mt-4 py-2 pl-[65px] pr-[72px] text-sm font-semibold laptop:mt-8"
         >
           Доєднатися
         </Button>

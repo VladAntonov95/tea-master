@@ -22,7 +22,7 @@ const Footer = ({ activeSection }) => {
     >
       <section className="mx-auto max-w-[1440px]">
         <section className="flex flex-col justify-between p-4 tablet:flex-row laptop:p-8">
-          <h2 className="text-center text-2xl text-white-text tablet:ml-[110px] tablet:max-w-[400px] tablet:text-left laptop:ml-[125px] desktop:min-w-[800px]">
+          <h2 className="text-center text-lg text-white-text tablet:ml-[110px] tablet:max-w-[400px] tablet:text-left laptop:ml-[125px] desktop:min-w-[800px]">
             <span className="text-header-symbol-color">茶</span>CHADAO
             <span className="text-header-symbol-color">道</span>
           </h2>
@@ -50,11 +50,11 @@ const Footer = ({ activeSection }) => {
             alt="Логотип чайної школи Пресвіт"
           />
           <div className="tablet:p-8">
-            <ul className="text-center">
+            <ul className="text-center text-md">
               <li>
                 <Link
                   href=""
-                  className="hover:text-hover-color text-sm text-white-text underline"
+                  className="hover:text-hover-color text-white-text underline"
                 >
                   Політика конфидеційності
                 </Link>
@@ -62,14 +62,14 @@ const Footer = ({ activeSection }) => {
               <li>
                 <Link
                   href=""
-                  className="hover:text-hover-color text-sm text-white-text underline"
+                  className="hover:text-hover-color text-white-text underline"
                 >
                   Правила користування сайтом
                 </Link>
               </li>
             </ul>
-            <ul className="mt-2 tablet:text-left laptop:ml-auto">
-              <li className="flex justify-center text-sm text-white-text">
+            <ul className="mt-2 text-md tablet:text-left laptop:ml-auto">
+              <li className="flex justify-center text-white-text">
                 <MdEmail className="mr-2 self-center" />
                 E-mail:
                 <Link
@@ -79,7 +79,7 @@ const Footer = ({ activeSection }) => {
                   info@peresvit.ua
                 </Link>
               </li>
-              <li className="flex justify-center text-sm text-white-text">
+              <li className="flex justify-center text-white-text">
                 <FaPhoneAlt className="mr-2 self-center" />
                 Телефон:
                 <Link
@@ -89,7 +89,7 @@ const Footer = ({ activeSection }) => {
                   +380673320022
                 </Link>
               </li>
-              <li className="flex justify-center text-sm text-white-text">
+              <li className="flex justify-center text-white-text">
                 <IoLocationOutline className="mr-2 self-center" />
                 Адреса:
                 <Link
