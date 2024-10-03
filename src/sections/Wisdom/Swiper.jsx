@@ -52,7 +52,7 @@ const WisdomSwiper = () => {
               <button className="hidden tablet:block">
                 <ArrowBackIosNewRoundedIcon
                   fontSize="large"
-                  className="swiper-button-prev text-white-text"
+                  className="swiper-button-prev hover:text-hover-color text-white-text"
                 />
               </button>
               <section className="relative z-10 mx-auto flex max-h-[506px] max-w-[280px] items-center justify-between rounded-3xl bg-background p-4 shadow-custom bigMobile:max-w-[350px] tablet:max-w-[400px] laptop:max-w-[600px] desktop:max-w-[800px]">
@@ -66,7 +66,7 @@ const WisdomSwiper = () => {
               <button className="hidden tablet:block">
                 <ArrowForwardIosRoundedIcon
                   fontSize="large"
-                  className="swiper-button-next text-white-text"
+                  className="swiper-button-next hover:text-hover-color text-white-text"
                 />
               </button>
             </section>
