@@ -43,6 +43,7 @@ module.exports = {
       "gray-text": "#7a7c7f",
       swiper: "#F2C6A0",
       "black-text": "#000",
+      "header-symbol-color": "#27302e",
       "hover-color": "#598318",
       "tableware-hover": "#B1533E",
     },

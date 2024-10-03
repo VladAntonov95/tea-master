@@ -32,7 +32,7 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
         activeSection === "tableware" ? "bg-tableware-color" : "bg-dark-green"
       } sticky top-0 z-50 mx-auto`}
     >
-      <section className="mx-auto flex w-full max-w-[1440px] p-[10px] align-middle">
+      <section className="mx-auto flex w-full max-w-[1440px] justify-between p-[10px] align-middle">
         <Image
           src="/assets/images/footer/logo.png"
           width={100}
@@ -46,9 +46,10 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
           href="#"
           className="hidden max-w-[430px] items-center text-center text-lg font-bold text-white-text laptop:flex"
         >
-          Чайна Перетвореного Світогляду
+          <span className="text-header-symbol-color">茶</span>CHADAO
+          <span className="text-header-symbol-color">道</span>
         </Link>
-        <nav className="ml-auto hidden items-center laptop:flex">
+        <nav className="hidden items-center laptop:flex">
           <ul className="flex">
             {links.map((link) => (
               <li

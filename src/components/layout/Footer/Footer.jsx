@@ -22,8 +22,9 @@ const Footer = ({ activeSection }) => {
     >
       <section className="mx-auto max-w-[1440px]">
         <section className="flex flex-col justify-between p-4 tablet:flex-row laptop:p-8">
-          <h2 className="text-center text-2xl text-white-text tablet:max-w-[400px] desktop:min-w-[800px]">
-            Чайна перетвореного світогляду «Пересвіт»
+          <h2 className="text-2xl text-white-text tablet:ml-[110px] tablet:max-w-[400px] laptop:ml-[125px] desktop:min-w-[800px]">
+            <span className="text-header-symbol-color">茶</span>CHADAO
+            <span className="text-header-symbol-color">道</span>
           </h2>
           <div className="m-auto flex p-8 tablet:m-0 tablet:ml-auto">
             <Link
