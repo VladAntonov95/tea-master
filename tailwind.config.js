@@ -44,6 +44,7 @@ module.exports = {
       swiper: "#F2C6A0",
       "black-text": "#000",
       "header-symbol-color": "#27302e",
+      "header-tableware-symbol-color": "#5A0C0C",
       "hover-color": "#598318",
       "tableware-hover": "#B1533E",
     },

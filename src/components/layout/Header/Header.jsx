@@ -45,13 +45,22 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
         <Link
           onClick={onBack}
           href="#"
-          className="font-playfair hidden max-w-[430px] items-center text-center text-lg font-bold text-white-text laptop:flex"
+          className="hidden max-w-[430px] items-center text-center font-playfair text-lg font-bold text-white-text laptop:flex"
         >
-          <span className="text-header-symbol-color">茶</span>CHADAO
-          <span className="text-header-symbol-color">道</span>
+          <span
+            className={`${activeSection === "tableware" ? "text-header-tableware-symbol-color" : "text-header-symbol-color"}`}
+          >
+            茶
+          </span>
+          CHADAO
+          <span
+            className={`${activeSection === "tableware" ? "text-header-tableware-symbol-color" : "text-header-symbol-color"}`}
+          >
+            道
+          </span>
         </Link>
         <nav className="hidden items-center laptop:flex">
-          <ul className="font-opensans flex text-md">
+          <ul className="flex font-opensans text-md">
             {links.map((link) => (
               <li
                 key={link.text}
