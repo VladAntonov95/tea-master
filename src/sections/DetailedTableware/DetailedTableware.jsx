@@ -30,16 +30,16 @@ const DetailedTableware = ({
   };
 
   return (
-    <section className="container m-auto">
+    <section className="container m-auto min-h-[65vh]">
       {!selectedTableware ? (
         <>
           <section className="flex py-8">
             <button onClick={onBack}>
               <IoIosArrowBack
-                className={`text-tableware-color hover:text-tableware-hover h-10 w-10`}
+                className={`h-10 w-10 text-tableware-color hover:text-tableware-hover`}
               />
             </button>
-            <h2 className="font-merriweather mx-auto text-lg font-bold">
+            <h2 className="mx-auto font-merriweather text-lg font-bold">
               Наявний посуд
             </h2>
           </section>
@@ -58,7 +58,7 @@ const DetailedTableware = ({
                   className="h-full min-h-[348px] w-[400px] rounded-[12px] tablet:mr-8 tablet:min-h-[371px] tablet:min-w-[256px] laptop:max-h-[350px] laptop:min-h-[348px] laptop:min-w-[450px]"
                 />
                 <section className="flex max-w-[500px] flex-col justify-between laptop:max-h-[350px]">
-                  <h3 className="font-merriweather my-4 text-lg tablet:mb-8 tablet:mt-0 tablet:text-lg">
+                  <h3 className="my-4 font-merriweather text-l tablet:mb-8 tablet:mt-0 tablet:text-lg">
                     {tableware.name}
                   </h3>
                   <p className="font-roboto text-m">{tableware.description}</p>
@@ -84,16 +84,16 @@ const DetailedTableware = ({
           </section>
         </>
       ) : (
-        <section>
-          <section className="flex py-8">
+        <>
+          <section className="flex pt-4 laptop:pt-8">
             <button onClick={handleBackToList}>
-              <IoIosArrowBack className="text-tableware-color hover:text-tableware-hover h-10 w-10" />
+              <IoIosArrowBack className="h-10 w-10 text-tableware-color hover:text-tableware-hover" />
             </button>
-            <h2 className="font-merriweather mx-auto text-lg font-bold bigMobile:text-xl">
+            <h2 className="mx-auto font-merriweather text-lg font-bold bigMobile:text-xl tablet:text-lg">
               {selectedTableware.name}
             </h2>
           </section>
-          <section className="mx-auto py-8">
+          <section className="mx-auto flex flex-col p-4 laptop:mt-8 laptop:flex-row">
             <Image
               src={selectedTableware.imageUrl}
               alt={`tea ${selectedTableware.name}`}
@@ -102,7 +102,7 @@ const DetailedTableware = ({
               height={1200}
               className="mx-auto h-full min-h-[348px] w-[400px] rounded-[12px] tablet:max-h-[400px] tablet:min-w-[700px] laptop:max-h-[350px] laptop:min-h-[348px] laptop:min-w-[450px]"
             />
-            <section className="flex flex-col justify-between laptop:max-h-[350px]">
+            <section className="flex flex-col justify-between laptop:max-h-[350px] laptop:p-8">
               <p className="py-4 text-center font-roboto text-m">
                 {selectedTableware.pageDescription}
               </p>
@@ -116,7 +116,7 @@ const DetailedTableware = ({
               </Button>
             </section>
           </section>
-        </section>
+        </>
       )}
     </section>
   );
