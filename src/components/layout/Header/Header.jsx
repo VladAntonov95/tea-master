@@ -45,7 +45,7 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
         <Link
           onClick={onBack}
           href="#"
-          className="hidden max-w-[430px] items-center text-center font-playfair text-lg font-bold text-white-text laptop:flex"
+          className="ml-[125px] hidden max-w-[430px] items-center text-center font-playfair text-lg font-bold text-white-text laptop:flex desktop:ml-[150px]"
         >
           <span
             className={`${activeSection === "tableware" ? "text-header-tableware-symbol-color" : "text-header-symbol-color"}`}
@@ -64,7 +64,7 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
             {links.map((link) => (
               <li
                 key={link.text}
-                className={`${activeSection === "tableware" ? "hover:text-tableware-hover" : "hover:text-hover-color"} p-4 text-white-text`}
+                className={`${activeSection === "tableware" ? "hover:text-tableware-hover" : "hover:text-hover-color"} px-2 py-4 text-white-text desktop:px-4`}
               >
                 <button
                   className="font-medium"
