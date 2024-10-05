@@ -47,10 +47,10 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
         <Link
           onClick={onBack}
           href="#"
-          className="ml-[125px] hidden max-w-[430px] items-center text-center font-playfair text-lg font-bold text-white-text laptop:flex desktop:ml-[150px]"
+          className="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 transform font-playfair text-md font-bold text-white-text bigMobile:text-lg"
         >
           <span
-            className={`${activeSection === "tableware" || activeSection === "school" ? "text-header-tableware-symbol-color" : "text-header-symbol-color"} laptop:ml-[120px] desktop:ml-[160px]`}
+            className={`${activeSection === "tableware" || activeSection === "school" ? "text-header-tableware-symbol-color" : "text-header-symbol-color"}`}
           >
             茶
           </span>
