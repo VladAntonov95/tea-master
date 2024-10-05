@@ -30,7 +30,9 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
   return (
     <header
       className={`${
-        activeSection === "tableware" ? "bg-tableware-color" : "bg-dark-green"
+        activeSection === "tableware" || activeSection === "school"
+          ? "bg-tableware-color"
+          : "bg-dark-green"
       } sticky top-0 z-50 mx-auto`}
     >
       <section className="mx-auto flex w-full max-w-[1440px] justify-between p-[10px] align-middle">
@@ -48,13 +50,13 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
           className="ml-[125px] hidden max-w-[430px] items-center text-center font-playfair text-lg font-bold text-white-text laptop:flex desktop:ml-[150px]"
         >
           <span
-            className={`${activeSection === "tableware" ? "text-header-tableware-symbol-color" : "text-header-symbol-color"} laptop:ml-[120px] desktop:ml-[160px]`}
+            className={`${activeSection === "tableware" || activeSection === "school" ? "text-header-tableware-symbol-color" : "text-header-symbol-color"} laptop:ml-[120px] desktop:ml-[160px]`}
           >
             茶
           </span>
           CHADAO
           <span
-            className={`${activeSection === "tableware" ? "text-header-tableware-symbol-color" : "text-header-symbol-color"}`}
+            className={`${activeSection === "tableware" || activeSection === "school" ? "text-header-tableware-symbol-color" : "text-header-symbol-color"}`}
           >
             道
           </span>
@@ -64,7 +66,7 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
             {links.map((link) => (
               <li
                 key={link.text}
-                className={`${activeSection === "tableware" ? "hover:text-tableware-hover" : "hover:text-hover-color"} px-2 py-4 text-white-text desktop:px-4`}
+                className={`${activeSection === "tableware" || activeSection === "school" ? "hover:text-tableware-hover" : "hover:text-hover-color"} px-2 py-4 text-white-text desktop:px-4`}
               >
                 <button
                   className="font-medium"
@@ -84,7 +86,7 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
         <nav className="laptop:hidden">
           <ul
             className={`${
-              activeSection === "tableware"
+              activeSection === "tableware" || activeSection === "school"
                 ? "bg-tableware-color"
                 : "bg-dark-green"
             } flex flex-col items-center px-4`}
@@ -92,7 +94,7 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
             {links.map((link) => (
               <li
                 key={link.text}
-                className={`${activeSection === "tableware" ? "hover:text-tableware-hover" : "hover:text-hover-color"} w-full px-4 pb-8 text-center text-white-text`}
+                className={`${activeSection === "tableware" || activeSection === "school" ? "hover:text-tableware-hover" : "hover:text-hover-color"} w-full px-4 pb-8 text-center text-white-text`}
               >
                 <button
                   className="text-l font-medium"

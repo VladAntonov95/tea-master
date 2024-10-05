@@ -81,7 +81,7 @@ const DetailedTea = ({ onBack, selectedTea, onSelectTea }) => {
               {selectedTea.name}
             </h2>
           </section>
-          <section className="mx-auto flex flex-col p-4 laptop:mt-8 laptop:flex-row">
+          <section className="mx-auto flex flex-col p-4 laptop:flex-row laptop:p-8">
             <Image
               src={selectedTea.imageUrl}
               alt={`tea ${selectedTea.name}`}

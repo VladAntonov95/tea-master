@@ -72,7 +72,10 @@ export default function RootLayout({ children }) {
           />
         )}
         {activeSection === "school" && (
-          <DetailedSchool onBack={handleBackClick} />
+          <DetailedSchool
+            onBack={handleBackClick}
+            activeSection={activeSection}
+          />
         )}
         {activeSection === "history" && <History onBack={handleBackClick} />}
         <Footer activeSection={activeSection} />
