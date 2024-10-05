@@ -48,7 +48,7 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
           className="ml-[125px] hidden max-w-[430px] items-center text-center font-playfair text-lg font-bold text-white-text laptop:flex desktop:ml-[150px]"
         >
           <span
-            className={`${activeSection === "tableware" ? "text-header-tableware-symbol-color" : "text-header-symbol-color"}`}
+            className={`${activeSection === "tableware" ? "text-header-tableware-symbol-color" : "text-header-symbol-color"} laptop:ml-[120px] desktop:ml-[160px]`}
           >
             茶
           </span>
