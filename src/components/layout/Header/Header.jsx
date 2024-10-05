@@ -35,7 +35,7 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
           : "bg-dark-green"
       } sticky top-0 z-50 mx-auto`}
     >
-      <section className="mx-auto flex w-full max-w-[1440px] justify-between p-[10px] align-middle">
+      <section className="mx-auto flex w-full max-w-[1440px] justify-between px-[24px] py-[10px] align-middle">
         <Image
           src="/assets/images/footer/logo.png"
           width={100}
