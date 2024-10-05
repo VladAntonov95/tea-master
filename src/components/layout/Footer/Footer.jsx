@@ -23,8 +23,8 @@ const Footer = ({ activeSection }) => {
       } pb-4 tablet:pb-0`}
     >
       <section className="mx-auto max-w-[1440px]">
-        <section className="flex flex-col justify-between px-4 pt-4 tablet:flex-row laptop:px-8 laptop:pt-8">
-          <h2 className="text-center font-playfair text-lg text-white-text tablet:ml-[110px] tablet:max-w-[400px] tablet:text-left laptop:ml-[125px] desktop:min-w-[800px]">
+        <section className="flex flex-col justify-between px-4 pt-4 tablet:flex-row laptop:px-8">
+          <h2 className="text-center font-playfair text-lg text-white-text tablet:ml-[80px] tablet:max-w-[400px] tablet:text-left laptop:ml-[100px] desktop:min-w-[800px]">
             <span
               className={`${activeSection === "tableware" || activeSection === "school" ? "text-header-tableware-symbol-color" : "text-header-symbol-color"}`}
             >
@@ -37,7 +37,7 @@ const Footer = ({ activeSection }) => {
               道
             </span>
           </h2>
-          <div className="m-auto flex p-8 tablet:m-0 tablet:ml-auto">
+          <div className="m-auto flex tablet:m-0 tablet:mb-4 tablet:mr-[110px] laptop:mr-[90px]">
             <Link
               href="https://www.instagram.com/chadao__world/"
               className="mr-5 self-center"
@@ -61,11 +61,11 @@ const Footer = ({ activeSection }) => {
             src="/assets/images/footer/logo.png"
             width={200}
             height={200}
-            className="m-auto max-h-[100px] max-w-[100px] rounded-full p-4 tablet:m-0 tablet:ml-[110px] tablet:max-h-[200px] tablet:max-w-[200px] laptop:ml-[145px]"
+            className="mx-auto my-4 max-h-[100px] max-w-[100px] rounded-full tablet:ml-[110px] tablet:mt-0 tablet:max-h-[150px] tablet:max-w-[150px] laptop:my-0 laptop:ml-[145px]"
             alt="Логотип чайної школи Пресвіт"
           />
-          <div className="tablet:p-8">
-            <ul className="mb-8 text-center font-opensans text-sm tablet:text-md">
+          <div className="tablet:pr-8 laptop:pb-8">
+            <ul className="mb-4 text-center font-opensans text-sm">
               <li>
                 <Link
                   href=""
@@ -83,7 +83,7 @@ const Footer = ({ activeSection }) => {
                 </Link>
               </li>
             </ul>
-            <ul className="text:sm mt-2 font-opensans tablet:text-left tablet:text-md laptop:ml-auto">
+            <ul className="text:sm mt-2 font-opensans tablet:text-left laptop:ml-auto">
               <li className="flex justify-center text-white-text">
                 <MdEmail className="mr-2 self-center" />
                 E-mail:
