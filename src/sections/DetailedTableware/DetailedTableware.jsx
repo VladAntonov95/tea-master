@@ -46,7 +46,7 @@ const DetailedTableware = ({
           <section className="mx-auto max-w-[700px] laptop:max-w-[1024px]">
             {tablewares.map((tableware) => (
               <article
-                className="mb-4 flex flex-col rounded-3xl p-4 text-center shadow-custom tablet:mb-8 tablet:flex-row tablet:p-8"
+                className="relative mb-4 flex flex-col rounded-3xl p-4 text-center shadow-custom tablet:mb-8 tablet:flex-row tablet:p-8"
                 key={tableware.id}
               >
                 <Image
@@ -57,27 +57,29 @@ const DetailedTableware = ({
                   height={500}
                   className="h-full min-h-[348px] w-[400px] rounded-[12px] tablet:mr-8 tablet:min-h-[371px] tablet:min-w-[256px] laptop:max-h-[350px] laptop:min-h-[348px] laptop:min-w-[450px]"
                 />
-                <section className="flex max-w-[500px] flex-col justify-between laptop:max-h-[350px]">
+                <section className="flex max-w-[500px] flex-col laptop:max-h-[350px]">
                   <h3 className="my-4 font-merriweather text-l tablet:mb-8 tablet:mt-0 tablet:text-lg">
                     {tableware.name}
                   </h3>
                   <p className="font-roboto text-m">{tableware.description}</p>
                   <p className="p-4 font-roboto text-m">{`Вартість: ${tableware.price}грн`}</p>
-                  <Button
-                    className="mx-auto mt-4 px-[72px] py-2 font-roboto text-sm font-semibold"
-                    title="Детальніше про посуд"
-                    onClick={() => handleTablewareSelect(tableware)}
-                    activeSection={activeSection}
-                  >
-                    {`Детальніше`}
-                  </Button>
-                  <Button
-                    className="mx-auto mt-4 px-[72px] py-2 font-roboto text-sm font-semibold"
-                    title="Зробити замовленя посуду"
-                    activeSection={activeSection}
-                  >
-                    {`Замовити`}
-                  </Button>
+                  <div className="bottom-8 flex flex-col tablet:absolute tablet:left-[55%] laptop:left-[63%]">
+                    <Button
+                      className="mx-auto px-[72px] py-2 font-roboto text-sm font-semibold"
+                      title="Детальніше про посуд"
+                      onClick={() => handleTablewareSelect(tableware)}
+                      activeSection={activeSection}
+                    >
+                      {`Детальніше`}
+                    </Button>
+                    <Button
+                      className="mx-auto mt-4 px-[72px] py-2 font-roboto text-sm font-semibold"
+                      title="Зробити замовленя посуду"
+                      activeSection={activeSection}
+                    >
+                      {`Замовити`}
+                    </Button>
+                  </div>
                 </section>
               </article>
             ))}
