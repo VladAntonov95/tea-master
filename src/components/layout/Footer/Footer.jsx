@@ -25,17 +25,19 @@ const Footer = ({ activeSection }) => {
       <section className="mx-auto max-w-[1440px]">
         <section className="flex flex-col justify-between px-4 pt-4 tablet:flex-row laptop:px-8">
           <h2 className="text-center font-playfair text-lg text-white-text tablet:ml-[80px] tablet:max-w-[400px] tablet:text-left laptop:ml-[100px] desktop:min-w-[800px]">
-            <span
-              className={`${activeSection === "tableware" || activeSection === "school" ? "text-header-tableware-symbol-color" : "text-header-symbol-color"}`}
-            >
-              茶
-            </span>
-            CHADAO
-            <span
-              className={`${activeSection === "tableware" || activeSection === "school" ? "text-header-tableware-symbol-color" : "text-header-symbol-color"}`}
-            >
-              道
-            </span>
+            <div className="mb-3">
+              <span
+                className={`${activeSection === "tableware" || activeSection === "school" ? "text-header-tableware-symbol-color" : "text-header-symbol-color"}`}
+              >
+                茶
+              </span>
+              CHADAO
+              <span
+                className={`${activeSection === "tableware" || activeSection === "school" ? "text-header-tableware-symbol-color" : "text-header-symbol-color"}`}
+              >
+                道
+              </span>
+            </div>
           </h2>
           <div className="m-auto flex tablet:m-0 tablet:mb-4 tablet:mr-[110px] laptop:mr-[90px]">
             <Link

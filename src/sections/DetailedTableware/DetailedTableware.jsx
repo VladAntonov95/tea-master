@@ -95,7 +95,7 @@ const DetailedTableware = ({
               {selectedTableware.name}
             </h2>
           </section>
-          <section className="mx-auto flex flex-col px-4 py-6 laptop:flex-row laptop:p-8">
+          <section className="flex flex-col px-4 py-5 mobile:py-6 tablet:py-8 laptop:flex-row laptop:p-8">
             <Image
               src={selectedTableware.imageUrl}
               alt={`tea ${selectedTableware.name}`}
