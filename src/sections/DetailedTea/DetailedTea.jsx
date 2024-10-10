@@ -11,7 +11,7 @@ import Button from "@/components/Button/Button";
 import { teas } from "../Tea/teas";
 
 // create DatailedTea component
-const DetailedTea = ({ onBack, selectedTea, onSelectTea }) => {
+const DetailedTea = ({ onBack, selectedTea, onSelectTea, addToCart }) => {
   const handleTeaSelect = (tea) => {
     onSelectTea(tea);
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -64,6 +64,7 @@ const DetailedTea = ({ onBack, selectedTea, onSelectTea }) => {
                     <Button
                       className="mx-auto mt-4 px-[72px] py-2 font-roboto text-sm font-semibold"
                       title="Зробити замовленя чаю"
+                      onClick={() => addToCart(selectedTea)}
                     >
                       {`Замовити`}
                     </Button>
@@ -100,6 +101,7 @@ const DetailedTea = ({ onBack, selectedTea, onSelectTea }) => {
               <Button
                 className="mx-auto mt-4 px-[72px] py-2 font-roboto text-sm font-semibold"
                 title="Зробити замовленя чаю"
+                onClick={() => addToCart(selectedTea)}
               >
                 {`Замовити`}
               </Button>

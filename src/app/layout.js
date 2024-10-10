@@ -1,35 +1,51 @@
+// root layout
+
 "use client";
-// import useState from react
 import { useState } from "react";
-
-// import styles
 import "../styles/globals.css";
-
-// import Header and Footer components
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
-
-// import detailed sections
 import DetailedTea from "@/sections/DetailedTea/DetailedTea";
 import DetailedTableware from "@/sections/DetailedTableware/DetailedTableware";
 import DetailedSchool from "@/sections/DetailedSchool/DetailedSchool";
 import History from "@/sections/History/History";
-
-// export const metadata = {
-//   title: "Чайна Перетвореного Світогляду",
-//   description: "Чайна Перетвореного Світогляду",
-// };
-// make server metadata
+import Cart from "@/sections/Cart/Cart";
+import { CartProvider, useCart } from "@/context/CartContext";
 
 export default function RootLayout({ children }) {
-  // State to show ditailed section
   const [activeSection, setActiveSection] = useState("");
-
-  // State to reset selected tea
   const [selectedTea, setSelectedTea] = useState(null);
   const [selectedTableware, setSelectedTableware] = useState(null);
 
-  // Function to handle section click
+  return (
+    <CartProvider>
+      <LayoutContent
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+        selectedTea={selectedTea}
+        setSelectedTea={setSelectedTea}
+        selectedTableware={selectedTableware}
+        setSelectedTableware={setSelectedTableware}
+      >
+        {children}
+      </LayoutContent>
+    </CartProvider>
+  );
+}
+
+// Создание нового компонента LayoutContent
+function LayoutContent({
+  activeSection,
+  setActiveSection,
+  selectedTea,
+  setSelectedTea,
+  selectedTableware,
+  setSelectedTableware,
+  children,
+}) {
+  const { cartItems, addToCart } = useCart(); // Теперь это будет работать
+
+  // Функция для обработки клика по секции
   const handleSectionClick = (section) => {
     if (section === "tea") {
       setSelectedTea(null);
@@ -40,9 +56,9 @@ export default function RootLayout({ children }) {
     window.scrollTo({ top: 0, behavior: "instant" });
   };
 
-  // Function to handle back click
+  // Функция для обработки нажатия кнопки "Назад"
   const handleBackClick = () => {
-    setActiveSection(""); // Сбрасываем активную секцию, чтобы вернуть на главный экран
+    setActiveSection("");
   };
 
   return (
@@ -52,15 +68,19 @@ export default function RootLayout({ children }) {
           onSectionClick={handleSectionClick}
           onBack={handleBackClick}
           activeSection={activeSection}
+          cartItems={cartItems} // Теперь передаем cartItems из контекста
         />
+
         <main className={`${activeSection ? "hidden" : "block"}`}>
           {children}
         </main>
+
         {activeSection === "tea" && (
           <DetailedTea
             onBack={handleBackClick}
             selectedTea={selectedTea}
             onSelectTea={setSelectedTea}
+            addToCart={addToCart}
           />
         )}
         {activeSection === "tableware" && (
@@ -69,6 +89,7 @@ export default function RootLayout({ children }) {
             selectedTableware={selectedTableware}
             onSelectTableware={setSelectedTableware}
             activeSection={activeSection}
+            addToCart={addToCart}
           />
         )}
         {activeSection === "school" && (
@@ -76,6 +97,9 @@ export default function RootLayout({ children }) {
             onBack={handleBackClick}
             activeSection={activeSection}
           />
+        )}
+        {activeSection === "cart" && (
+          <Cart onBack={handleBackClick} activeSection={activeSection} />
         )}
         {activeSection === "history" && <History onBack={handleBackClick} />}
         <Footer activeSection={activeSection} />

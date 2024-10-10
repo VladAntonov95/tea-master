@@ -10,10 +10,13 @@ import Image from "next/image";
 
 // import burger icon
 import { GiHamburgerMenu } from "react-icons/gi";
+import { HiOutlineShoppingCart } from "react-icons/hi";
 
 // Header component
-const Header = ({ onSectionClick, onBack, activeSection }) => {
+const Header = ({ onSectionClick, onBack, activeSection, cartItems }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const cartItemCount = cartItems.length;
 
   // navigation links
   const links = [
@@ -77,6 +80,18 @@ const Header = ({ onSectionClick, onBack, activeSection }) => {
               </li>
             ))}
           </ul>
+          <button onClick={() => onSectionClick("cart")} className="relative">
+            <HiOutlineShoppingCart
+              className={`h-8 w-8 text-white-text ${activeSection === "tableware" || activeSection === "school" ? "hover:text-tableware-hover" : "hover:text-hover-color"} cursor-pointer`}
+            />
+            {cartItemCount > 0 && (
+              <span
+                className={`${activeSection === "tableware" || activeSection === "school" ? "bg-tableware-color" : "bg-dark-green"} absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full border-2 border-white-text text-m font-bold text-white-text`}
+              >
+                {cartItemCount}
+              </span>
+            )}
+          </button>
         </nav>
         <button className="ml-auto pr-4 laptop:hidden" onClick={toggleMenu}>
           <GiHamburgerMenu className="h-8 w-8 text-white-text" />

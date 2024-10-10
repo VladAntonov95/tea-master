@@ -16,8 +16,13 @@ import "./swiper.css";
 // import tea base
 import { teas } from "./teas";
 
+// import useContext hook
+import { useCart } from "@/context/CartContext";
+
 // swiper component
 const TeaSwiper = () => {
+  const { addToCart } = useCart();
+  // console.log(addToCart);
   return (
     <Swiper
       spaceBetween={32}
@@ -69,7 +74,7 @@ const TeaSwiper = () => {
               height={286}
               className="h-auto max-h-[268px] min-h-[268px] w-full max-w-[286px] rounded-[12px]"
             />
-            <h3 className="font-merriweather mt-4 text-center text-m font-semibold">
+            <h3 className="mt-4 text-center font-merriweather text-m font-semibold">
               {tea.name}
             </h3>
             <p className="mt-2 text-center font-roboto text-s">
@@ -78,6 +83,7 @@ const TeaSwiper = () => {
             <Button
               className="mx-auto mt-4 px-[72px] py-2 font-roboto text-md font-semibold tablet:mt-8"
               title="Зробити замовленя чаю"
+              onClick={() => addToCart(tea)}
             >
               Замовити
             </Button>
