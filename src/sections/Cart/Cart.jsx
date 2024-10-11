@@ -22,7 +22,7 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
     const TELEGRAM_API_URL = `https://api.telegram.org/bot7842960073:AAHvBohpeeTfI5symdUwLUZbTrJZBM0dycU/sendMessage`;
 
     const messagePayload = {
-      chat_id: "404735563",
+      chat_id: "175599878",
       text: `Новый заказ:\n${orderText}`,
     };
 
