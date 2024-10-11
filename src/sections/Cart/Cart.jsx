@@ -21,32 +21,40 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
 
     const TELEGRAM_API_URL = `https://api.telegram.org/bot7842960073:AAHvBohpeeTfI5symdUwLUZbTrJZBM0dycU/sendMessage`;
 
+    const chatIds = ["404735563", "175599878"];
+
     const messagePayload = {
       chat_id: "175599878",
       text: `Новый заказ:\n${orderText}`,
     };
 
     try {
-      const response = await fetch(TELEGRAM_API_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(messagePayload),
-      });
+      // Отправляем сообщение каждому получателю
+      for (const chatId of chatIds) {
+        const messagePayload = {
+          chat_id: chatId,
+          text: `Новый заказ:\n${orderText}`,
+        };
 
-      const result = await response.json();
-      if (response.ok) {
-        alert("Ваше замовлення відправлено!");
+        const response = await fetch(TELEGRAM_API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(messagePayload),
+        });
 
-        setCustomerName("");
-        setCustomerPhone("");
-
-        clearCart();
-      } else {
-        console.error("Упс! Виникла помилка при відправлені заказу", result);
-        alert("Упс! Виникла помилка при відправлені заказу");
+        const result = await response.json();
+        if (!response.ok) {
+          console.error("Упс! Виникла помилка при відправлені заказу", result);
+        }
       }
+
+      alert("Ваше замовлення відправлено!");
+
+      setCustomerName("");
+      setCustomerPhone("");
+      clearCart();
     } catch (error) {
       console.error("Помилка", error);
       alert("Упс! Виникла помилка при відправлені заказу");
