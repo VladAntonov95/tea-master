@@ -33,7 +33,6 @@ export default function RootLayout({ children }) {
   );
 }
 
-// Создание нового компонента LayoutContent
 function LayoutContent({
   activeSection,
   setActiveSection,
@@ -43,9 +42,8 @@ function LayoutContent({
   setSelectedTableware,
   children,
 }) {
-  const { cartItems, addToCart } = useCart(); // Теперь это будет работать
+  const { cartItems, addToCart, removeFromCart, clearCart } = useCart();
 
-  // Функция для обработки клика по секции
   const handleSectionClick = (section) => {
     if (section === "tea") {
       setSelectedTea(null);
@@ -56,7 +54,6 @@ function LayoutContent({
     window.scrollTo({ top: 0, behavior: "instant" });
   };
 
-  // Функция для обработки нажатия кнопки "Назад"
   const handleBackClick = () => {
     setActiveSection("");
   };
@@ -68,7 +65,7 @@ function LayoutContent({
           onSectionClick={handleSectionClick}
           onBack={handleBackClick}
           activeSection={activeSection}
-          cartItems={cartItems} // Теперь передаем cartItems из контекста
+          cartItems={cartItems}
         />
 
         <main className={`${activeSection ? "hidden" : "block"}`}>
@@ -99,7 +96,12 @@ function LayoutContent({
           />
         )}
         {activeSection === "cart" && (
-          <Cart onBack={handleBackClick} activeSection={activeSection} />
+          <Cart
+            onBack={handleBackClick}
+            activeSection={activeSection}
+            removeFromCart={removeFromCart}
+            clearCart={clearCart}
+          />
         )}
         {activeSection === "history" && <History onBack={handleBackClick} />}
         <Footer activeSection={activeSection} />

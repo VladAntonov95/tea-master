@@ -77,7 +77,7 @@ const DetailedTableware = ({
                       className="mx-auto mt-4 px-[72px] py-2 font-roboto text-sm font-semibold"
                       title="Зробити замовленя посуду"
                       activeSection={activeSection}
-                      onClick={() => addToCart(selectedTableware)}
+                      onClick={() => addToCart(tableware)}
                     >
                       {`Замовити`}
                     </Button>

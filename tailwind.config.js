@@ -47,6 +47,7 @@ module.exports = {
       "header-tableware-symbol-color": "#5A0C0C",
       "hover-color": "#598318",
       "tableware-hover": "#B1533E",
+      receipt: "#E0E0E0",
     },
     extend: {
       fontFamily: {

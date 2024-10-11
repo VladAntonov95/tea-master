@@ -64,7 +64,7 @@ const DetailedTea = ({ onBack, selectedTea, onSelectTea, addToCart }) => {
                     <Button
                       className="mx-auto mt-4 px-[72px] py-2 font-roboto text-sm font-semibold"
                       title="Зробити замовленя чаю"
-                      onClick={() => addToCart(selectedTea)}
+                      onClick={() => addToCart(tea)}
                     >
                       {`Замовити`}
                     </Button>
