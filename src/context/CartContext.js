@@ -6,6 +6,8 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [customerName, setCustomerName] = useState("");
+  const [customerPhone, setCustomerPhone] = useState("");
 
   const addToCart = (item) => {
     if (item.name === "Доєднатись до школи") {
@@ -48,6 +50,10 @@ export const CartProvider = ({ children }) => {
         removeFromCart,
         clearCart,
         handleJoinSchool,
+        customerName,
+        setCustomerName,
+        customerPhone,
+        setCustomerPhone,
       }}
     >
       {children}

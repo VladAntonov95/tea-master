@@ -4,10 +4,13 @@ import { useCart } from "@/context/CartContext";
 import Button from "@/components/Button/Button";
 
 const Cart = ({ onBack, removeFromCart, clearCart }) => {
-  const { cartItems } = useCart();
-
-  const [customerName, setCustomerName] = useState("");
-  const [customerPhone, setCustomerPhone] = useState("");
+  const {
+    cartItems,
+    customerName,
+    setCustomerName,
+    customerPhone,
+    setCustomerPhone,
+  } = useCart();
 
   const handleOrder = async () => {
     if (!customerName || !customerPhone) {
