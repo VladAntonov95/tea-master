@@ -1,12 +1,16 @@
 "use client";
-//import next image
 import Image from "next/image";
-
-// import button component
 import Button from "@/components/Button/Button";
+import { useSection } from "@/context/SectionContext";
 
-// Tableware component
 export const Tableware = () => {
+  const { setSelectedTableware, setActiveSection } = useSection();
+
+  const handleOrderClick = () => {
+    setSelectedTableware(null);
+    setActiveSection("tableware");
+  };
+
   return (
     <section className="container m-auto flex max-w-[320px] flex-col border-b border-b-sections-border py-4 mobile:max-w-[375px] bigMobile:max-w-[440px] tablet:max-w-[768px] laptop:max-w-[1024px] laptop:py-8 desktop:max-w-[1440px]">
       <section className="flex justify-between">
@@ -67,14 +71,14 @@ export const Tableware = () => {
           </p>
           <div className="ml-8 hidden laptop:block">
             <Image
-              src="/assets/images/Tableware/4.png"
+              src="/assets/images/Tableware/2.png"
               width={100}
               height={100}
               alt="Посуд для чайної церемонії"
               className="h-[100px] w-[100px] rounded-full"
             />
             <Image
-              src="/assets/images/Tableware/5.png"
+              src="/assets/images/Tableware/3.png"
               width={100}
               height={100}
               alt="Посуд для чайної церемонії"
@@ -93,6 +97,7 @@ export const Tableware = () => {
       <Button
         title="Зробити замовлення посуду"
         className="m-auto mt-8 px-[72px] py-2 font-roboto text-sm font-semibold"
+        onClick={handleOrderClick} // Привязываем обработчик к кнопке
       >
         Замовити
       </Button>

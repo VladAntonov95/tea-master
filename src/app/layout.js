@@ -1,8 +1,7 @@
-// root layout
-
 "use client";
-import { useState } from "react";
 import "../styles/globals.css";
+import { CartProvider, useCart } from "@/context/CartContext";
+import { SectionProvider } from "@/context/SectionContext";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
 import DetailedTea from "@/sections/DetailedTea/DetailedTea";
@@ -10,38 +9,27 @@ import DetailedTableware from "@/sections/DetailedTableware/DetailedTableware";
 import DetailedSchool from "@/sections/DetailedSchool/DetailedSchool";
 import History from "@/sections/History/History";
 import Cart from "@/sections/Cart/Cart";
-import { CartProvider, useCart } from "@/context/CartContext";
+import { useSection } from "@/context/SectionContext";
 
 export default function RootLayout({ children }) {
-  const [activeSection, setActiveSection] = useState("");
-  const [selectedTea, setSelectedTea] = useState(null);
-  const [selectedTableware, setSelectedTableware] = useState(null);
-
   return (
     <CartProvider>
-      <LayoutContent
-        activeSection={activeSection}
-        setActiveSection={setActiveSection}
-        selectedTea={selectedTea}
-        setSelectedTea={setSelectedTea}
-        selectedTableware={selectedTableware}
-        setSelectedTableware={setSelectedTableware}
-      >
-        {children}
-      </LayoutContent>
+      <SectionProvider>
+        <LayoutContent>{children}</LayoutContent>
+      </SectionProvider>
     </CartProvider>
   );
 }
 
-function LayoutContent({
-  activeSection,
-  setActiveSection,
-  selectedTea,
-  setSelectedTea,
-  selectedTableware,
-  setSelectedTableware,
-  children,
-}) {
+function LayoutContent({ children }) {
+  const {
+    activeSection,
+    setActiveSection,
+    selectedTea,
+    setSelectedTea,
+    selectedTableware,
+    setSelectedTableware,
+  } = useSection();
   const { cartItems, addToCart, removeFromCart, clearCart } = useCart();
 
   const handleSectionClick = (section) => {
