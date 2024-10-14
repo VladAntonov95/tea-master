@@ -6,11 +6,11 @@ import Button from "@/components/Button/Button";
 import Image from "next/image";
 
 // Hero component
-const Hero = () => {
+const Hero = ({ handleJoinSchool }) => {
   return (
     <section className="container m-auto mt-4 flex flex-col justify-between border-b border-b-sections-border py-4 tablet:max-w-[768px] tablet:flex-row laptop:max-w-[1024px] laptop:py-8 desktop:max-w-[1440px]">
       <article className="flex flex-col justify-between text-center tablet:order-1 tablet:mr-4 tablet:text-left laptop:mr-8">
-        <h1 className="font-merriweather mb-4 text-center text-lg font-bold tablet:mb-8 tablet:text-left">
+        <h1 className="mb-4 text-center font-merriweather text-lg font-bold tablet:mb-8 tablet:text-left">
           Чайна традиція «Пересвіт»
         </h1>
         <p className="text-left font-roboto text-m">
@@ -27,6 +27,7 @@ const Hero = () => {
         <Button
           className="mx-auto mt-4 min-w-[238px] py-2 text-center font-roboto text-m font-semibold tablet:mx-0 tablet:mt-auto"
           title="Доєднатися до школи прямо сейчас"
+          onClick={handleJoinSchool}
         >
           Доєднатись
         </Button>

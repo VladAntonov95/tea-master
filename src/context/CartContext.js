@@ -8,12 +8,17 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (item) => {
-    const newItem = {
-      ...item,
-      cartId: Date.now(), // Генерация уникального ID
-    };
+    if (item.name === "Доєднатись до школи") {
+      const existingItem = cartItems.find(
+        (cartItem) => cartItem.name === "Доєднатись до школи",
+      );
+      if (existingItem) {
+        alert("Ми вже робими все можливе щоб доєднати вас до школи! Дякую!");
+        return;
+      }
+    }
+    const newItem = { ...item, cartId: Date.now() };
     setCartItems((prevItems) => [...prevItems, newItem]);
-    console.log("addToCart:", newItem);
   };
 
   const removeFromCart = (cartId) => {
@@ -28,9 +33,22 @@ export const CartProvider = ({ children }) => {
     console.log("clearCart: all items removed from cart");
   };
 
+  const handleJoinSchool = () => {
+    const newItem = {
+      name: "Доєднатись до школи",
+    };
+    addToCart(newItem);
+  };
+
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, clearCart }}
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        clearCart,
+        handleJoinSchool,
+      }}
     >
       {children}
     </CartContext.Provider>

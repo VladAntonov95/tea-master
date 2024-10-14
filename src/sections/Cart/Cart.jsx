@@ -16,24 +16,25 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
     }
 
     const orderText =
-      `Покупець: ${customerName}\nТелефон: ${customerPhone}\n\nЗаказ:\n` +
-      cartItems.map((item) => `${item.name} - ${item.price} грн`).join("\n");
+      `Покупець: ${customerName}\nТелефон: ${customerPhone}\n\nЗамовлення:\n` +
+      cartItems
+        .map((item) => {
+          return item.name === "Доєднатись до школи"
+            ? item.name
+            : `${item.name} - ${item.price} грн`;
+        })
+        .join("\n");
 
     const TELEGRAM_API_URL = `https://api.telegram.org/bot7842960073:AAHvBohpeeTfI5symdUwLUZbTrJZBM0dycU/sendMessage`;
 
-    const chatIds = ["404735563", "175599878"];
-
-    const messagePayload = {
-      chat_id: "175599878",
-      text: `Новый заказ:\n${orderText}`,
-    };
+    const chatIds = ["404735563"];
+    // "175599878"
 
     try {
-      // Отправляем сообщение каждому получателю
       for (const chatId of chatIds) {
         const messagePayload = {
           chat_id: chatId,
-          text: `Новый заказ:\n${orderText}`,
+          text: `Нове замовлення:\n${orderText}`,
         };
 
         const response = await fetch(TELEGRAM_API_URL, {
@@ -70,7 +71,7 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
         <div className="mx-auto max-w-[500px] pb-8">
           <input
             type="text"
-            placeholder="Ваше имя"
+            placeholder="Ваше імʼя"
             value={customerName}
             onChange={(e) => setCustomerName(e.target.value)}
             className="border-receipt mb-2 w-full rounded-md border p-2"
@@ -90,7 +91,8 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
             {cartItems.map((item) => (
               <li key={item.cartId} className="mb-2">
                 <p>
-                  <strong>{item.name}</strong> - {item.price} грн
+                  <strong>{item.name}</strong>
+                  {item.price ? ` - ${item.price} грн` : null}
                 </p>
                 <button onClick={() => removeFromCart(item.cartId)}>
                   Видалити
