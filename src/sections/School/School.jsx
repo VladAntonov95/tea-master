@@ -2,10 +2,10 @@
 import Button from "@/components/Button/Button";
 
 // School component
-export const School = () => {
+export const School = ({ handleJoinSchool }) => {
   return (
     <section className="container m-auto border-b border-b-sections-border py-4 laptop:py-8">
-      <h2 className="font-merriweather mb-4 text-center text-lg font-bold laptop:mb-8">
+      <h2 className="mb-4 text-center font-merriweather text-lg font-bold laptop:mb-8">
         Чайна школа «Пересвіт»
       </h2>
       <p className="m-auto mb-4 font-roboto text-m laptop:mb-8">
@@ -69,6 +69,7 @@ export const School = () => {
         <Button
           title="Доєднатися до чайної школи ʼПресвітʼ"
           className="mx-auto mt-4 py-2 pl-[65px] pr-[72px] font-roboto text-sm font-semibold laptop:mt-8"
+          onClick={handleJoinSchool}
         >
           Доєднатися
         </Button>

@@ -17,7 +17,11 @@ export default function Home({ visibleSection }) {
       <Tableware
         className={visibleSection === "tableware" ? "block" : "hidden"}
       />
-      <School className={visibleSection === "school" ? "block" : "hidden"} />
+      <School
+        className={visibleSection === "school" ? "block" : "hidden"}
+        addToCart={addToCart}
+        handleJoinSchool={handleJoinSchool}
+      />
       <Wisdom />
     </>
   );
