@@ -1,12 +1,11 @@
 "use client";
-//import button component
 import Button from "@/components/Button/Button";
-
-// import images from next
 import Image from "next/image";
+import { useCart } from "@/context/CartContext";
 
-// Hero component
-const Hero = ({ handleJoinSchool }) => {
+const Hero = () => {
+  const { handleJoinSchool } = useCart();
+
   return (
     <section className="container m-auto mt-4 flex flex-col justify-between border-b border-b-sections-border py-4 tablet:max-w-[768px] tablet:flex-row laptop:max-w-[1024px] laptop:py-8 desktop:max-w-[1440px]">
       <article className="flex flex-col justify-between text-center tablet:order-1 tablet:mr-4 tablet:text-left laptop:mr-8">
@@ -37,7 +36,7 @@ const Hero = ({ handleJoinSchool }) => {
         width={350}
         height={300}
         priority={true}
-        alt="Фото чайноъ церемонії ʼПресвітʼ"
+        alt="Фото чайної церемонії ʼПресвітʼ"
         className="order-2 hidden w-auto rounded-full tablet:flex tablet:h-[400px] tablet:w-[200px] laptop:h-[450px] laptop:w-[300px]"
       />
     </section>

@@ -32,7 +32,7 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
 
     const TELEGRAM_API_URL = `https://api.telegram.org/bot7842960073:AAHvBohpeeTfI5symdUwLUZbTrJZBM0dycU/sendMessage`;
 
-    const chatIds = ["404735563"];
+    const chatIds = ["404735563", "175599878"];
 
     try {
       for (const chatId of chatIds) {

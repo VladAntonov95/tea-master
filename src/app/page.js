@@ -6,9 +6,11 @@ import Tableware from "@/sections/Tableware/Tableware";
 import School from "@/sections/School/School";
 import Wisdom from "@/sections/Wisdom/Wisdom";
 import { useCart } from "@/context/CartContext";
+import Modal from "@/components/Modal/Modal";
 
 export default function Home({ visibleSection }) {
-  const { addToCart, handleJoinSchool } = useCart();
+  const { addToCart, handleJoinSchool, isModalOpen, modalMessage, closeModal } =
+    useCart();
 
   return (
     <>
@@ -23,6 +25,7 @@ export default function Home({ visibleSection }) {
         handleJoinSchool={handleJoinSchool}
       />
       <Wisdom />
+      {isModalOpen && <Modal message={modalMessage} onClose={closeModal} />}
     </>
   );
 }

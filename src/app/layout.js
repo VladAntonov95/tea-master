@@ -9,6 +9,7 @@ import DetailedTableware from "@/sections/DetailedTableware/DetailedTableware";
 import DetailedSchool from "@/sections/DetailedSchool/DetailedSchool";
 import History from "@/sections/History/History";
 import Cart from "@/sections/Cart/Cart";
+import Modal from "@/components/Modal/Modal";
 import { useSection } from "@/context/SectionContext";
 
 export default function RootLayout({ children }) {
@@ -30,7 +31,15 @@ function LayoutContent({ children }) {
     selectedTableware,
     setSelectedTableware,
   } = useSection();
-  const { cartItems, addToCart, removeFromCart, clearCart } = useCart();
+  const {
+    cartItems,
+    addToCart,
+    removeFromCart,
+    clearCart,
+    isModalOpen,
+    modalMessage,
+    closeModal,
+  } = useCart();
 
   const handleSectionClick = (section) => {
     if (section === "tea") {
@@ -48,18 +57,16 @@ function LayoutContent({ children }) {
 
   return (
     <html lang="ua">
-      <body className={`font-mono antialiased`}>
+      <body className="font-mono antialiased">
         <Header
           onSectionClick={handleSectionClick}
           onBack={handleBackClick}
           activeSection={activeSection}
           cartItems={cartItems}
         />
-
         <main className={`${activeSection ? "hidden" : "block"}`}>
           {children}
         </main>
-
         {activeSection === "tea" && (
           <DetailedTea
             onBack={handleBackClick}
@@ -92,6 +99,7 @@ function LayoutContent({ children }) {
           />
         )}
         {activeSection === "history" && <History onBack={handleBackClick} />}
+        {isModalOpen && <Modal message={modalMessage} onClose={closeModal} />}
         <Footer activeSection={activeSection} />
       </body>
     </html>
