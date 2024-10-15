@@ -90,7 +90,7 @@ const Header = ({ onSectionClick, onBack, activeSection, cartItems }) => {
           />
           {cartItemCount > 0 && (
             <span
-              className={`${activeSection === "tableware" || activeSection === "school" ? "bg-tableware-color" : "bg-dark-green"} absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full border-2 border-white-text text-m font-bold text-white-text`}
+              className={`${activeSection === "tableware" || activeSection === "school" ? "bg-tableware-color" : "bg-dark-green"} absolute -right-2 bottom-8 flex h-4 w-4 items-center justify-center rounded-full border-2 border-white-text text-xs font-bold text-white-text bigMobile:h-5 bigMobile:w-5 bigMobile:text-s tablet:h-6 tablet:w-6 tablet:text-m`}
             >
               {cartItemCount}
             </span>
