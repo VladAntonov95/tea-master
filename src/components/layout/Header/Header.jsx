@@ -64,7 +64,7 @@ const Header = ({ onSectionClick, onBack, activeSection, cartItems }) => {
             道
           </span>
         </Link>
-        <nav className="hidden items-center laptop:flex">
+        <nav className="ml-auto hidden items-center laptop:flex">
           <ul className="flex font-opensans text-md">
             {links.map((link) => (
               <li
@@ -80,21 +80,21 @@ const Header = ({ onSectionClick, onBack, activeSection, cartItems }) => {
               </li>
             ))}
           </ul>
-          <button onClick={() => onSectionClick("cart")} className="relative">
-            <HiOutlineShoppingCart
-              className={`h-8 w-8 text-white-text ${activeSection === "tableware" || activeSection === "school" ? "hover:text-tableware-hover" : "hover:text-hover-color"} cursor-pointer`}
-            />
-            {cartItemCount > 0 && (
-              <span
-                className={`${activeSection === "tableware" || activeSection === "school" ? "bg-tableware-color" : "bg-dark-green"} absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full border-2 border-white-text text-m font-bold text-white-text`}
-              >
-                {cartItemCount}
-              </span>
-            )}
-          </button>
         </nav>
         <button className="ml-auto pr-4 laptop:hidden" onClick={toggleMenu}>
-          <GiHamburgerMenu className="h-8 w-8 text-white-text" />
+          <GiHamburgerMenu className="h-5 w-5 text-white-text bigMobile:h-6 bigMobile:w-6 tablet:h-8 tablet:w-8" />
+        </button>
+        <button onClick={() => onSectionClick("cart")} className="relative">
+          <HiOutlineShoppingCart
+            className={`h-5 w-5 text-white-text bigMobile:h-6 bigMobile:w-6 tablet:h-8 tablet:w-8 ${activeSection === "tableware" || activeSection === "school" ? "hover:text-tableware-hover" : "hover:text-hover-color"} cursor-pointer`}
+          />
+          {cartItemCount > 0 && (
+            <span
+              className={`${activeSection === "tableware" || activeSection === "school" ? "bg-tableware-color" : "bg-dark-green"} absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full border-2 border-white-text text-m font-bold text-white-text`}
+            >
+              {cartItemCount}
+            </span>
+          )}
         </button>
       </section>
       {isMenuOpen && (
