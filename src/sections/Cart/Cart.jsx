@@ -1,4 +1,3 @@
-// components/Cart.jsx
 "use client";
 import React, { useState } from "react";
 import { useCart } from "@/context/CartContext";
@@ -72,7 +71,7 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
 
   return (
     <section className="container">
-      <section className="relative mx-auto mt-8 max-w-[750px] rounded-t-2xl bg-background text-center shadow-custom">
+      <section className="relative mx-auto mt-4 max-w-[750px] items-center rounded-t-2xl bg-background text-center shadow-custom tablet:mt-16">
         <h2 className="py-4 font-merriweather text-lg font-bold">
           Ваше замовлення
         </h2>
@@ -93,7 +92,7 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
           />
         </div>
       </section>
-      <section className="ticket bg-receipt relative mx-auto mb-8 max-w-[750px] py-4 text-center shadow-custom">
+      <section className="ticket bg-receipt relative mx-auto mb-4 max-w-[750px] py-4 text-center shadow-custom tablet:mb-16">
         {cartItems.length > 0 ? (
           <ul className="mb-4 font-roboto text-m">
             {cartItems.map((item) => (
@@ -109,12 +108,12 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
             ))}
           </ul>
         ) : (
-          <p className="mb-4 font-roboto text-m">Тут будуть ваші покупки</p>
+          <p className="mb-4 font-roboto text-m">Очікуємо на ваше замовлення</p>
         )}
 
         <Button
           onClick={onBack}
-          className="mx-auto mr-4 mt-4 w-[231px] px-[72px] py-2 font-roboto text-md font-semibold tablet:mt-8"
+          className="mx-auto mt-4 w-[231px] px-[72px] py-2 font-roboto text-md font-semibold tablet:mr-4 tablet:mt-8"
         >
           Назад
         </Button>
