@@ -1,9 +1,12 @@
+// components/Cart.jsx
 "use client";
 import React, { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import Button from "@/components/Button/Button";
+import Order from "../Order/Order";
 
 const Cart = ({ onBack, removeFromCart, clearCart }) => {
+  const [isOrderSuccess, setIsOrderSuccess] = useState(false);
   const {
     cartItems,
     customerName,
@@ -31,7 +34,6 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
     const TELEGRAM_API_URL = `https://api.telegram.org/bot7842960073:AAHvBohpeeTfI5symdUwLUZbTrJZBM0dycU/sendMessage`;
 
     const chatIds = ["404735563"];
-    // "175599878"
 
     try {
       for (const chatId of chatIds) {
@@ -54,16 +56,19 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
         }
       }
 
-      alert("Ваше замовлення відправлено!");
-
       setCustomerName("");
       setCustomerPhone("");
       clearCart();
+      setIsOrderSuccess(true);
     } catch (error) {
       console.error("Помилка", error);
       alert("Упс! Виникла помилка при відправлені заказу");
     }
   };
+
+  if (isOrderSuccess) {
+    return <Order onBack={onBack} />;
+  }
 
   return (
     <section className="container">
@@ -109,13 +114,13 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
 
         <Button
           onClick={onBack}
-          className="mx-auto mr-4 mt-4 px-[72px] py-2 font-roboto text-md font-semibold tablet:mt-8"
+          className="mx-auto mr-4 mt-4 w-[231px] px-[72px] py-2 font-roboto text-md font-semibold tablet:mt-8"
         >
           Назад
         </Button>
         <Button
-          className="mx-auto mt-4 px-[72px] py-2 font-roboto text-md font-semibold tablet:mt-8"
-          onClick={() => handleOrder()}
+          className="mx-auto mt-4 w-[231px] px-[72px] py-2 font-roboto text-md font-semibold tablet:mt-8"
+          onClick={handleOrder}
         >
           Замовити
         </Button>
