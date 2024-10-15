@@ -86,7 +86,7 @@ const Header = ({ onSectionClick, onBack, activeSection, cartItems }) => {
         </button>
         <button onClick={() => onSectionClick("cart")} className="relative">
           <HiOutlineShoppingCart
-            className={`h-5 w-5 text-white-text bigMobile:h-6 bigMobile:w-6 tablet:h-8 tablet:w-8 ${activeSection === "tableware" || activeSection === "school" ? "hover:text-tableware-hover" : "hover:text-hover-color"} cursor-pointer`}
+            className={`h-5 w-5 text-white-text bigMobile:h-6 bigMobile:w-6 tablet:mx-2 tablet:h-8 tablet:w-8 ${activeSection === "tableware" || activeSection === "school" ? "hover:text-tableware-hover" : "hover:text-hover-color"} cursor-pointer`}
           />
           {cartItemCount > 0 && (
             <span

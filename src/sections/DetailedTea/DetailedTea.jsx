@@ -25,11 +25,11 @@ const DetailedTea = ({ onBack, selectedTea, onSelectTea, addToCart }) => {
     <section className="container m-auto min-h-[65vh]">
       {!selectedTea ? (
         <>
-          <section className="flex py-8">
-            <button onClick={onBack}>
+          <section className="relative flex items-center py-4">
+            <button onClick={onBack} className="mr-4 self-start">
               <IoIosArrowBack className="h-10 w-10 text-dark-green hover:text-hover-color" />
             </button>
-            <h2 className="mx-auto font-merriweather text-lg font-bold">
+            <h2 className="absolute left-1/2 -translate-x-1/2 transform text-center font-merriweather text-lg font-bold bigMobile:text-xl tablet:text-lg">
               Наявні Чаї
             </h2>
           </section>
