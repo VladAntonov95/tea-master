@@ -10,23 +10,18 @@ export const CartProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const addToCart = (item) => {
-    // Проверяем, добавляется ли "Доєднатись до школи"
     if (item.name === "Доєднатись до школи") {
       const existingItem = cartItems.find(
         (cartItem) => cartItem.name === "Доєднатись до школи",
       );
       if (existingItem) {
-        setModalMessage(
-          "Ви вже залишили заявку на доєднання до нашої школи! Ми робимо все можливе щоб цей процес пройшов якнайшвидше!",
-        );
+        setModalMessage("Дякуємо, що хочете бути частиною нас!");
         setIsModalOpen(true);
         return;
       }
     }
 
-    // Проверяем, добавляется ли чай
     if (item.category === "tea") {
-      // предполагается, что в вашем объекте `item` есть свойство `category`
       setModalMessage("Дякуємо! Ваш чай додано в замовлення.");
     } else if (item.category === "tableware") {
       setModalMessage("Дякуємо! Чайний посуд додано в замовлення.");
