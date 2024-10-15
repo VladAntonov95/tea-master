@@ -4,9 +4,9 @@ import Button from "@/components/Button/Button";
 
 const OrderConfirmation = ({ onBack }) => {
   return (
-    <section className="container">
-      <section className="relative m-8 mx-auto max-w-[750px] rounded-2xl bg-background text-center shadow-custom">
-        <h2 className="py-4 font-merriweather text-lg font-bold">
+    <section className="container flex min-h-[450px] items-center justify-center">
+      <section className="relative max-w-[750px] rounded-2xl bg-background px-8 text-center shadow-custom">
+        <h2 className="py-8 font-merriweather text-lg font-bold">
           Дякуємо за замовлення!
         </h2>
         <p className="mx-auto max-w-[500px] font-roboto text-m">
@@ -15,7 +15,7 @@ const OrderConfirmation = ({ onBack }) => {
         </p>
         <Button
           onClick={onBack}
-          className="mx-auto mb-8 w-[231px] px-[72px] py-2 font-roboto text-md font-semibold tablet:mt-8"
+          className="mx-auto mb-8 mt-8 w-[231px] px-[72px] py-2 font-roboto text-md font-semibold"
         >
           Назад
         </Button>

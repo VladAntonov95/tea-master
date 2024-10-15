@@ -113,12 +113,12 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
 
         <Button
           onClick={onBack}
-          className="mx-auto mt-4 w-[231px] px-[72px] py-2 font-roboto text-md font-semibold tablet:mr-4 tablet:mt-8"
+          className="mx-auto w-[231px] px-[72px] py-2 font-roboto text-md font-semibold tablet:mr-4"
         >
           Назад
         </Button>
         <Button
-          className="mx-auto mt-4 w-[231px] px-[72px] py-2 font-roboto text-md font-semibold tablet:mt-8"
+          className="mx-auto mt-4 w-[231px] px-[72px] py-2 font-roboto text-md font-semibold tablet:mt-0"
           onClick={handleOrder}
         >
           Замовити
