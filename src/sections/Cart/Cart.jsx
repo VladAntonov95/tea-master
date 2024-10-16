@@ -141,20 +141,20 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
                       <button
                         className="rounded-full text-center tablet:h-[30px] tablet:w-[30px] tablet:border"
                         onClick={() =>
-                          handleQuantityChange(item.cartId, item.quantity + 1)
+                          handleQuantityChange(item.cartId, item.quantity - 1)
                         }
                       >
                         <span>-</span>
                       </button>
                       <input
-                        type="number"
+                        type="text"
                         min="1"
                         value={item.quantity || 1}
                         onChange={(e) => {
                           const value = Math.max(1, Number(e.target.value));
                           handleQuantityChange(item.cartId, value);
                         }}
-                        className="bg-receipt bigMoobile:w-2 w-[15%] rounded text-center mobile:w-[30%] bigMobile:mx-2 bigMobile:w-4"
+                        className="bg-receipt w-[40px] rounded text-center mobile:w-[50px] bigMobile:mx-2"
                       />
                       <button
                         className="rounded-full text-center tablet:h-[30px] tablet:w-[30px] tablet:border"
