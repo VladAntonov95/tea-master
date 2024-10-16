@@ -48,6 +48,7 @@ module.exports = {
       "hover-color": "#598318",
       "tableware-hover": "#B1533E",
       receipt: "#E0E0E0",
+      error: "#cc0000",
     },
     extend: {
       fontFamily: {

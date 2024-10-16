@@ -6,6 +6,7 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [customerName, setCustomerName] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
+  const [customerEmail, setCustomerEmail] = useState("");
   const [modalMessage, setModalMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -43,7 +44,9 @@ export const CartProvider = ({ children }) => {
 
   const clearCart = () => {
     setCartItems([]);
-    console.log("clearCart: all items removed from cart");
+    setCustomerName("");
+    setCustomerPhone("");
+    setCustomerEmail("");
   };
 
   const handleJoinSchool = () => {
@@ -69,6 +72,8 @@ export const CartProvider = ({ children }) => {
         setCustomerName,
         customerPhone,
         setCustomerPhone,
+        customerEmail,
+        setCustomerEmail,
         modalMessage,
         isModalOpen,
         closeModal,

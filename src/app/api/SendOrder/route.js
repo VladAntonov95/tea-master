@@ -1,7 +1,28 @@
 export async function POST(req) {
-  const { customerName, customerPhone } = await req.json();
+  const { customerName, customerPhone, customerEmail, cartItems } =
+    await req.json();
 
-  const orderText = `Покупець: ${customerName}\nТелефон: ${customerPhone}\n\nЗамовлення: ...`;
+  if (!cartItems || cartItems.length === 0) {
+    return new Response(
+      JSON.stringify({ error: "Корзина порожня. Будь-ласка замовте щось." }),
+      {
+        status: 400,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
+    );
+  }
+
+  const orderText =
+    `Покупець: ${customerName}\nТелефон: ${customerPhone}\nE-mail: ${customerEmail}\n\nЗамовлення:\n ` +
+    cartItems
+      .map((item) => {
+        return item.name === "Доєднатись до школи"
+          ? item.name
+          : `${item.name} - ${item.price} грн`;
+      })
+      .join("\n");
 
   const TELEGRAM_API_URL = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`;
 

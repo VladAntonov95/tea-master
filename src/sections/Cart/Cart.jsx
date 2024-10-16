@@ -1,19 +1,18 @@
-"use client"; // если это компонент, который использует состояние
-
 import React, { useState } from "react";
-import { useCart } from "@/context/CartContext"; // убедитесь, что путь правильный
+import { useCart } from "@/context/CartContext";
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Button from "@/components/Button/Button"; // проверьте путь
-import Order from "../Order/Order"; // проверьте путь к Order
-import Modal from "@/components/Modal/Modal"; // проверьте путь
+import Button from "@/components/Button/Button";
+import Order from "../Order/Order";
+import Modal from "@/components/Modal/Modal";
 
 const schema = Yup.object().shape({
   customerName: Yup.string().required("Введіть ваше імʼя"),
   customerPhone: Yup.string()
     .required("Введіть ваш номер телефону")
     .matches(/^\+?\d{10,12}$/, "Некоректний формат телефону"),
+  customerEmail: Yup.string().required("Введіть ваш e-mail"),
 });
 
 const Cart = ({ onBack, removeFromCart, clearCart }) => {
@@ -25,6 +24,8 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
     setCustomerName,
     customerPhone,
     setCustomerPhone,
+    customerEmail,
+    setCustomerEmail,
   } = useCart();
 
   const {
@@ -36,17 +37,28 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
   });
 
   const handleOrder = async (data) => {
+    if (!cartItems || cartItems.length === 0) {
+      setModalMessage("Корзина порожня. Будь-ласка, додайте товари.");
+      return;
+    }
+
+    const orderData = {
+      ...data,
+      cartItems: cartItems,
+    };
+
     try {
       const response = await fetch("/api/SendOrder", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(orderData),
       });
 
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        const result = await response.json();
+        throw new Error(result.error || "Помилка відправлення замовлення");
       }
 
       const result = await response.json();
@@ -54,8 +66,10 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
       setIsOrderSuccess(true);
       clearCart();
     } catch (error) {
-      console.error("Ошибка:", error);
-      setModalMessage("Упс! Виникла помилка при відправлені заказу");
+      console.error("Помилка:", error);
+      setModalMessage(
+        error.message || "Упс! Виникла помилка при відправлені заказу",
+      );
     }
   };
 
@@ -66,7 +80,7 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
   return (
     <section className="container">
       {modalMessage && (
-        <Modal onClose={() => setModalMessage("")}>{modalMessage}</Modal>
+        <Modal message={modalMessage} onClose={() => setModalMessage("")} />
       )}
 
       <section className="relative mx-auto mt-4 max-w-[750px] items-center rounded-t-2xl bg-background text-center shadow-custom tablet:mt-16">
@@ -83,7 +97,7 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
             className="border-receipt mb-2 w-full rounded-md border p-2"
           />
           {errors.customerName && (
-            <p className="text-red-500">{errors.customerName.message}</p>
+            <p className="text-error">{errors.customerName.message}</p>
           )}
           <input
             type="text"
@@ -91,10 +105,21 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
             {...register("customerPhone")}
             value={customerPhone}
             onChange={(e) => setCustomerPhone(e.target.value)}
-            className="border-receipt w-full rounded-md border p-2"
+            className="border-receipt mb-2 w-full rounded-md border p-2"
           />
           {errors.customerPhone && (
-            <p className="text-red-500">{errors.customerPhone.message}</p>
+            <p className="text-error">{errors.customerPhone.message}</p>
+          )}
+          <input
+            type="email"
+            placeholder="Ваш e-mail"
+            {...register("customerEmail")}
+            value={customerEmail}
+            onChange={(e) => setCustomerEmail(e.target.value)}
+            className="border-receipt w-full rounded-md border p-2"
+          />
+          {errors.customerEmail && (
+            <p className="text-error">{errors.customerEmail.message}</p>
           )}
         </div>
       </section>
@@ -107,7 +132,6 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
                 <p>
                   <strong>{item.name}</strong>
                   {item.price ? ` - ${item.price} грн` : null}{" "}
-                  {/* Fixed line */}
                 </p>
                 <button onClick={() => removeFromCart(item.cartId)}>
                   Видалити
