@@ -45,11 +45,9 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
         })
         .join("\n");
 
-    // const TELEGRAM_API_URL = `https://api.telegram.org/bot${process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN}/sendMessage`;
-    const TELEGRAM_API_URL = `https://api.telegram.org/bot${NEXT_PUBLIC_TELEGRAM_BOT_TOKEN}/sendMessage`;
+    const TELEGRAM_API_URL = `https://api.telegram.org/bot${process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN}/sendMessage`;
 
-    // const chatIds = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_IDS.split(",");
-    const chatIds = NEXT_PUBLIC_TELEGRAM_CHAT_IDS.split(",");
+    const chatIds = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_IDS.split(",");
 
     try {
       for (const chatId of chatIds) {
