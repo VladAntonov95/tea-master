@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Button from "@/components/Button/Button";
 import Order from "../Order/Order";
 import Modal from "@/components/Modal/Modal";
+import { GiEmptyWoodBucket } from "react-icons/gi";
 
 const schema = Yup.object().shape({
   customerName: Yup.string().required("Введіть ваше імʼя"),
@@ -18,15 +19,7 @@ const schema = Yup.object().shape({
 const Cart = ({ onBack, removeFromCart, clearCart }) => {
   const [isOrderSuccess, setIsOrderSuccess] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
-  const {
-    cartItems,
-    customerName,
-    setCustomerName,
-    customerPhone,
-    setCustomerPhone,
-    customerEmail,
-    setCustomerEmail,
-  } = useCart();
+  const { cartItems, updateCartItemQuantity } = useCart();
 
   const {
     register,
@@ -73,6 +66,14 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
     }
   };
 
+  const handleQuantityChange = (cartId, quantity) => {
+    if (quantity < 1) {
+      removeFromCart(cartId);
+    } else {
+      updateCartItemQuantity(cartId, quantity);
+    }
+  };
+
   if (isOrderSuccess) {
     return <Order onBack={onBack} />;
   }
@@ -92,31 +93,27 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
             type="text"
             placeholder="Ваше імʼя"
             {...register("customerName")}
-            value={customerName}
-            onChange={(e) => setCustomerName(e.target.value)}
-            className="border-receipt mb-2 w-full rounded-md border p-2"
+            className={`border-receipt mb-2 w-full rounded-md border p-2 ${errors.customerName ? "border-error" : ""}`}
           />
           {errors.customerName && (
             <p className="text-error">{errors.customerName.message}</p>
           )}
+
           <input
             type="text"
             placeholder="Ваш телефон"
             {...register("customerPhone")}
-            value={customerPhone}
-            onChange={(e) => setCustomerPhone(e.target.value)}
-            className="border-receipt mb-2 w-full rounded-md border p-2"
+            className={`border-receipt mb-2 w-full rounded-md border p-2 ${errors.customerPhone ? "border-error" : ""}`}
           />
           {errors.customerPhone && (
             <p className="text-error">{errors.customerPhone.message}</p>
           )}
+
           <input
             type="email"
             placeholder="Ваш e-mail"
             {...register("customerEmail")}
-            value={customerEmail}
-            onChange={(e) => setCustomerEmail(e.target.value)}
-            className="border-receipt w-full rounded-md border p-2"
+            className={`border-receipt w-full rounded-md border p-2 ${errors.customerEmail ? "border-error" : ""}`}
           />
           {errors.customerEmail && (
             <p className="text-error">{errors.customerEmail.message}</p>
@@ -124,18 +121,62 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
         </div>
       </section>
 
-      <section className="ticket bg-receipt relative mx-auto mb-4 max-w-[750px] py-4 text-center shadow-custom tablet:mb-16">
+      <section className="ticket bg-receipt relative mx-auto mb-4 max-w-[750px] pb-4 text-center shadow-custom tablet:mb-16">
         {cartItems.length > 0 ? (
-          <ul className="mb-4 font-roboto text-m">
+          <ul className="mx-4 mb-4 items-center font-roboto text-m">
             {cartItems.map((item) => (
-              <li key={item.cartId} className="mb-2">
-                <p>
+              <li
+                key={item.cartId}
+                className="flex min-h-[50px] flex-row items-center justify-between border-b border-b-black-text text-s bigMobile:p-2 tablet:text-sm"
+              >
+                <p className="text-left">
                   <strong>{item.name}</strong>
-                  {item.price ? ` - ${item.price} грн` : null}{" "}
                 </p>
-                <button onClick={() => removeFromCart(item.cartId)}>
-                  Видалити
-                </button>
+                <p>
+                  {item.price ? ` ${item.price * item.quantity} грн` : null}
+                </p>
+                {item.name !== "Доєднатись до школи" ? (
+                  <div className="flex items-center">
+                    <div>
+                      <button
+                        className="rounded-full text-center tablet:h-[30px] tablet:w-[30px] tablet:border"
+                        onClick={() =>
+                          handleQuantityChange(item.cartId, item.quantity + 1)
+                        }
+                      >
+                        <span>-</span>
+                      </button>
+                      <input
+                        type="number"
+                        min="1"
+                        value={item.quantity || 1}
+                        onChange={(e) => {
+                          const value = Math.max(1, Number(e.target.value));
+                          handleQuantityChange(item.cartId, value);
+                        }}
+                        className="bg-receipt bigMoobile:w-2 w-[15%] rounded text-center mobile:w-[30%] bigMobile:mx-2 bigMobile:w-4"
+                      />
+                      <button
+                        className="rounded-full text-center tablet:h-[30px] tablet:w-[30px] tablet:border"
+                        onClick={() =>
+                          handleQuantityChange(item.cartId, item.quantity + 1)
+                        }
+                      >
+                        <span>+</span>
+                      </button>
+                    </div>
+                    <button
+                      className="ml-2"
+                      onClick={() => removeFromCart(item.cartId)}
+                    >
+                      <GiEmptyWoodBucket className="mb-2 h-9 w-9" />
+                    </button>
+                  </div>
+                ) : (
+                  <button onClick={() => removeFromCart(item.cartId)}>
+                    <GiEmptyWoodBucket className="h-9 w-9" />
+                  </button>
+                )}
               </li>
             ))}
           </ul>

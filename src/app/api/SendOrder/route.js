@@ -18,9 +18,11 @@ export async function POST(req) {
     `Покупець: ${customerName}\nТелефон: ${customerPhone}\nE-mail: ${customerEmail}\n\nЗамовлення:\n ` +
     cartItems
       .map((item) => {
-        return item.name === "Доєднатись до школи"
-          ? item.name
-          : `${item.name} - ${item.price} грн`;
+        if (item.name === "Доєднатись до школи") {
+          return `${item.name}`;
+        } else {
+          return `${item.name} - ${item.quantity} шт. - ${item.price * item.quantity} грн`;
+        }
       })
       .join("\n");
 

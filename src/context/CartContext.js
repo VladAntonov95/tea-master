@@ -20,26 +20,41 @@ export const CartProvider = ({ children }) => {
         setIsModalOpen(true);
         return;
       }
-    }
-
-    if (item.category === "tea") {
-      setModalMessage("Дякуємо! Ваш чай додано в замовлення.");
-    } else if (item.category === "tableware") {
-      setModalMessage("Дякуємо! Чайний посуд додано в замовлення.");
-    } else {
+      const newItem = { ...item, cartId: Date.now(), quantity: 1 };
+      setCartItems((prevItems) => [...prevItems, newItem]);
       setModalMessage("Дякуємо, що хочете бути частиною нас!");
+      setIsModalOpen(true);
+      return;
     }
 
-    const newItem = { ...item, cartId: Date.now() };
-    setCartItems((prevItems) => [...prevItems, newItem]);
+    const existingItem = cartItems.find(
+      (cartItem) => cartItem.name === item.name,
+    );
+
+    if (existingItem) {
+      updateCartItemQuantity(existingItem.cartId, existingItem.quantity + 1);
+      setModalMessage("Дякуємо! Ваш товар додано в замовлення.");
+    } else {
+      const newItem = { ...item, cartId: Date.now(), quantity: 1 };
+      setCartItems((prevItems) => [...prevItems, newItem]);
+      setModalMessage("Дякуємо! Ваш товар додано в замовлення.");
+    }
+
     setIsModalOpen(true);
+  };
+
+  const updateCartItemQuantity = (cartId, quantity) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.cartId === cartId ? { ...item, quantity } : item,
+      ),
+    );
   };
 
   const removeFromCart = (cartId) => {
     setCartItems((prevItems) =>
       prevItems.filter((item) => item.cartId !== cartId),
     );
-    console.log("removeFromCart: removed item with cartId", cartId);
   };
 
   const clearCart = () => {
@@ -52,6 +67,7 @@ export const CartProvider = ({ children }) => {
   const handleJoinSchool = () => {
     const newItem = {
       name: "Доєднатись до школи",
+      category: "membership",
     };
     addToCart(newItem);
   };
@@ -66,6 +82,7 @@ export const CartProvider = ({ children }) => {
         cartItems,
         addToCart,
         removeFromCart,
+        updateCartItemQuantity,
         clearCart,
         handleJoinSchool,
         customerName,
