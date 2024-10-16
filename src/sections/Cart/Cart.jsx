@@ -45,9 +45,11 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
         })
         .join("\n");
 
-    const TELEGRAM_API_URL = `https://api.telegram.org/bot${process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN}/sendMessage`;
+    // const TELEGRAM_API_URL = `https://api.telegram.org/bot${process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN}/sendMessage`;
+    const TELEGRAM_API_URL = `https://api.telegram.org/bot${NEXT_PUBLIC_TELEGRAM_BOT_TOKEN}/sendMessage`;
 
-    const chatIds = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_IDS.split(",");
+    // const chatIds = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_IDS.split(",");
+    const chatIds = NEXT_PUBLIC_TELEGRAM_CHAT_IDS.split(",");
 
     try {
       for (const chatId of chatIds) {
@@ -147,7 +149,7 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
         </Button>
         <Button
           className="mx-auto mt-4 w-[231px] px-[72px] py-2 font-roboto text-md font-semibold tablet:mt-0"
-          onClick={handleSubmit(handleOrder)} // Используем handleSubmit для отправки формы
+          onClick={handleSubmit(handleOrder)}
         >
           Замовити
         </Button>
