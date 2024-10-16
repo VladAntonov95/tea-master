@@ -52,6 +52,7 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
       const result = await response.json();
       console.log(result.message);
       setIsOrderSuccess(true);
+      clearCart();
     } catch (error) {
       console.error("Ошибка:", error);
       setModalMessage("Упс! Виникла помилка при відправлені заказу");
