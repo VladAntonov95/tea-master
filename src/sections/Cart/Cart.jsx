@@ -129,7 +129,7 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
                 key={item.cartId}
                 className="flex min-h-[50px] flex-row items-center justify-between border-b border-b-black-text text-s bigMobile:p-2 tablet:text-sm"
               >
-                <p className="text-left">
+                <p className="text-left tablet:min-w-[250px]">
                   <strong>{item.name}</strong>
                 </p>
                 <p>
