@@ -1,12 +1,13 @@
-"use client";
+"use client"; // если это компонент, который использует состояние
+
 import React, { useState } from "react";
-import { useCart } from "@/context/CartContext";
+import { useCart } from "@/context/CartContext"; // убедитесь, что путь правильный
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Button from "@/components/Button/Button";
-import Order from "../Order/Order";
-import Modal from "@/components/Modal/Modal";
+import Button from "@/components/Button/Button"; // проверьте путь
+import Order from "../Order/Order"; // проверьте путь к Order
+import Modal from "@/components/Modal/Modal"; // проверьте путь
 
 const schema = Yup.object().shape({
   customerName: Yup.string().required("Введіть ваше імʼя"),
@@ -35,47 +36,24 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
   });
 
   const handleOrder = async (data) => {
-    const orderText =
-      `Покупець: ${data.customerName}\nТелефон: ${data.customerPhone}\n\nЗамовлення:\n` +
-      cartItems
-        .map((item) => {
-          return item.name === "Доєднатись до школи"
-            ? item.name
-            : `${item.name} - ${item.price} грн`;
-        })
-        .join("\n");
-
-    const TELEGRAM_API_URL = `https://api.telegram.org/bot${process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN}/sendMessage`;
-
-    const chatIds = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_IDS.split(",");
-
     try {
-      for (const chatId of chatIds) {
-        const messagePayload = {
-          chat_id: chatId,
-          text: `Нове замовлення:\n${orderText}`,
-        };
+      const response = await fetch("/api/SendOrder", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-        const response = await fetch(TELEGRAM_API_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(messagePayload),
-        });
-
-        const result = await response.json();
-        if (!response.ok) {
-          console.error("Упс! Виникла помилка при відправлені заказу", result);
-        }
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
       }
 
-      setCustomerName("");
-      setCustomerPhone("");
-      clearCart();
+      const result = await response.json();
+      console.log(result.message);
       setIsOrderSuccess(true);
     } catch (error) {
-      console.error("Помилка", error);
+      console.error("Ошибка:", error);
       setModalMessage("Упс! Виникла помилка при відправлені заказу");
     }
   };
@@ -127,7 +105,8 @@ const Cart = ({ onBack, removeFromCart, clearCart }) => {
               <li key={item.cartId} className="mb-2">
                 <p>
                   <strong>{item.name}</strong>
-                  {item.price ? ` - ${item.price} грн` : null}
+                  {item.price ? ` - ${item.price} грн` : null}{" "}
+                  {/* Fixed line */}
                 </p>
                 <button onClick={() => removeFromCart(item.cartId)}>
                   Видалити
